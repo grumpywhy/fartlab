@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FartLab: The Science of Gaseous Emissions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         :root {
             --primary: #1e3a8a;
@@ -55,12 +56,12 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem;
         }
         
         nav {
             background-color: var(--card-bg);
-            padding: 1rem 0;
+            padding: 0.5rem 0;
             border-bottom: 2px solid var(--border);
             position: sticky;
             top: 0;
@@ -73,34 +74,38 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 1rem;
+            flex-wrap: wrap;
         }
         
         .nav-logo {
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--secondary);
             display: flex;
             align-items: center;
+            padding: 0.5rem 0;
         }
         
         .nav-logo i {
             margin-right: 0.5rem;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
         
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
         
         .nav-links a {
             color: var(--text);
             text-decoration: none;
             font-weight: bold;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem;
             border-radius: 4px;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .nav-links a:hover {
@@ -110,7 +115,7 @@
         
         h1 {
             margin-bottom: 1rem;
-            font-size: 3rem;
+            font-size: 2.5rem;
             background: linear-gradient(to right, var(--secondary), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -122,8 +127,10 @@
             color: var(--secondary);
             border-bottom: 2px solid var(--accent);
             padding-bottom: 0.5rem;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
             display: inline-block;
+            font-size: 1.5rem;
         }
         
         .meme-scientific {
@@ -147,8 +154,8 @@
             background-color: var(--card-bg);
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            padding: 2rem;
-            margin: 2rem 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
             text-align: center;
             border-left: 5px solid var(--secondary);
             position: relative;
@@ -168,20 +175,21 @@
         }
         
         .formula {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--secondary);
             margin: 1rem 0;
             font-family: 'Courier New', monospace;
             text-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
         
         .gas-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
         
         .gas-card {
@@ -189,12 +197,12 @@
             border-radius: 8px;
             box-shadow: 0 3px 15px rgba(0,0,0,0.2);
             padding: 1.5rem;
-            width: 250px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid var(--secondary);
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
         
         .gas-card::before {
@@ -219,7 +227,7 @@
         }
         
         .gas-formula {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: bold;
             margin: 0.5rem 0;
             color: var(--secondary);
@@ -246,7 +254,7 @@
             color: var(--text);
             padding: 1.5rem;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             position: relative;
             border-left: 5px solid var(--accent);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -268,36 +276,39 @@
             background-color: var(--primary);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
             border-top: 4px solid var(--secondary);
         }
         
         .section {
-            margin: 4rem 0;
+            margin: 2rem 0;
             background-color: rgba(30, 41, 59, 0.7);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         
         .highlight {
             background-color: var(--card-bg);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 8px;
             border-left: 5px solid var(--secondary);
         }
         
         .chart-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 2rem auto;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            height: 300px;
+            position: relative;
         }
         
         #interactive-fart {
             text-align: center;
-            margin: 3rem 0;
-            padding: 2rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
             background-color: var(--card-bg);
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -332,6 +343,9 @@
             z-index: 1;
             font-family: 'Courier New', monospace;
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+            margin: 0.5rem;
+            width: auto;
+            white-space: nowrap;
         }
         
         button:hover {
@@ -346,7 +360,7 @@
         
         .fart-result {
             margin-top: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
             background-color: rgba(30, 41, 59, 0.8);
             padding: 1.5rem;
             border-radius: 8px;
@@ -354,7 +368,7 @@
         }
         
         .slider-container {
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             text-align: left;
             background-color: rgba(15, 23, 42, 0.8);
             padding: 1.5rem;
@@ -403,14 +417,14 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
         table th, table td {
-            padding: 1rem;
+            padding: 0.75rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
         }
@@ -451,14 +465,14 @@
         }
         
         .menu-section {
-            margin: 4rem 0;
+            margin: 2rem 0;
         }
         
         .grid-menu {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
         
         .menu-card {
@@ -468,6 +482,7 @@
             transition: all 0.3s ease;
             border-left: 4px solid var(--accent);
             cursor: pointer;
+            height: 100%;
         }
         
         .menu-card:hover {
@@ -482,6 +497,7 @@
             gap: 0.5rem;
             margin-bottom: 0.5rem;
             color: var(--secondary);
+            font-size: 1.1rem;
         }
         
         .menu-card p {
@@ -505,7 +521,7 @@
         }
         
         .sound-controls {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             padding: 1.5rem;
             background-color: rgba(15, 23, 42, 0.8);
             border-radius: 8px;
@@ -521,22 +537,23 @@
             gap: 0.5rem;
         }
         
-        .sound-btn i {
-            font-size: 1.2rem;
-        }
-        
         .sound-settings {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 1rem;
-            flex-wrap: wrap;
             width: 100%;
             margin-top: 1rem;
         }
         
+        @media (max-width: 640px) {
+            .sound-settings {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .sound-setting {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-direction: column;
         }
         
         .badge {
@@ -559,16 +576,24 @@
         }
         
         .fart-score {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
             margin-top: 1.5rem;
             padding: 1rem;
             background-color: rgba(15, 23, 42, 0.8);
             border-radius: 8px;
         }
         
+        @media (min-width: 640px) {
+            .fart-score {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
         .fart-score-item {
             text-align: center;
+            padding: 0.5rem;
         }
         
         .fart-score-label {
@@ -585,41 +610,7 @@
         
         .nft-button {
             background-color: var(--secondary);
-            margin-top: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .gas-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .gas-card {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .formula {
-                font-size: 1.5rem;
-            }
-            
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .grid-menu {
-                grid-template-columns: 1fr;
-            }
+            margin-top: 1rem;
         }
         
         /* Meme Decorations */
@@ -670,7 +661,7 @@
         
         #visualizer {
             width: 100%;
-            height: 100px;
+            height: 80px;
             background-color: rgba(15, 23, 42, 0.8);
             border-radius: 8px;
             margin-top: 1rem;
@@ -686,10 +677,255 @@
             border-radius: 3px 3px 0 0;
             transition: height 0.2s ease;
         }
-    </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+        
+        .research-log {
+            background-color: rgba(30, 41, 59, 0.9);
+            border: 2px solid var(--accent);
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1.5rem auto 0;
+            max-width: 90%;
+            position: relative;
+            font-family: 'Courier New', monospace;
+            color: #d1fae5;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.4);
+        }
+        
+        .log-header {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        .log-entry {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        .log-stamp {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background-color: var(--danger);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.7rem;
+            transform: rotate(15deg);
+            border-radius: 2px;
+            opacity: 0.9;
+        }
+        
+        .staff-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .staff-name {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .staff-title {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .staff-bio {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        
+        .fart-name-generator {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            border: 2px dashed var(--secondary);
+        }
+        
+        .generated-fart-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin: 1rem 0;
+            min-height: 2.5rem;
+            padding: 0.5rem;
+            background-color: rgba(15, 23, 42, 0.8);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .fartodynamic-equation {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            border-left: 5px solid var(--accent);
+            position: relative;
+        }
+        
+        .equation {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin: 1rem 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .equation-label {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .citation {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: var(--text);
+            opacity: 0.8;
+            text-align: right;
+            margin-top: 0.5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 0.5rem;
+        }
+        
+        .pixelated-border {
+            border: 8px solid transparent;
+            border-image: url('data:image/svg+xml;utf8,<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="4" height="4" fill="%2306b6d4"/><rect x="4" y="4" width="4" height="4" fill="%2306b6d4"/></svg>');
+            border-image-slice: 2;
+            border-image-repeat: repeat;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        /* Improved Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .formula {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+            
+            .fun-fact::before {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+            
+            .formula-box::after {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+            
+            button {
+                padding: 0.7rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            table th, table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .header-content {
+                padding: 0 0.5rem;
+            }
+            
+            .gas-formula {
+                font-size: 1.5rem;
+            }
+            
+            .meme-tag, .comic-effect {
+                display: none;
+            }
+            
+            .research-log {
+                font-size: 0.8rem;
+                padding: 0.8rem;
+            }
+            
+            .staff-card {
+                padding: 1rem;
+            }
+        }
+        
+        /* Add some random meme stickers */
+        .sticker {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        /* Vapor-wave aesthetic elements */
+        .vaporwave-grid {
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(rgba(249, 115, 22, 0.1) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(249, 115, 22, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0;
+            perspective: 500px;
+            transform: rotateX(60deg);
+            transform-origin: bottom;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        
+        /* Button hover meme effect */
+        button::after {
+            content: "WOW";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            transform: rotate(15deg);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        button:hover::after {
+            opacity: 1;
+        }
+
+        <body>
     <div class="retro-grid"></div>
     
     <header>
@@ -703,6 +939,13 @@
             <div class="meme-tag" style="top: 20px; right: 50px;">SUCH SCIENCE</div>
             <div class="laser-eyes" style="top: 120px; left: 30%;"></div>
             <div class="laser-eyes" style="top: 120px; right: 30%;"></div>
+            
+            <!-- Research Log Entry -->
+            <div class="research-log">
+                <div class="log-header">CLASSIFIED RESEARCH LOG</div>
+                <div class="log-entry">SUBJECT #420B: Post-burrito emission characteristics demonstrate 47% increased methane production (p<0.0069).</div>
+                <div class="log-stamp">TOP SECRET</div>
+            </div>
         </div>
     </header>
     
@@ -748,96 +991,951 @@
             </div>
         </section>
         
+        <!-- SCIENTIFIC FART NAME GENERATOR -->
+        <section class="section">
+            <h2>🔬 FLATULENCE TAXONOMY GENERATOR</h2>
+            <div class="fart-name-generator">
+                <p>Our AI-powered classification system uses advanced algorithms to categorize gaseous emissions according to the International Flatology Association standards.</p>
+                
+                <div class="generated-fart-name" id="fart-name-display">
+                    Click to generate a scientific classification
+                </div>
+                
+                <button id="generate-name-btn"><i class="fas fa-atom"></i> Generate Classification</button>
+                
+                <div class="citation">
+                    [Gasworthy, R. et al. (2024). "Taxonomic Classification of Human Flatulence Variants Based on Chemical Composition". Journal of Flatological Sciences, 69(4), pp. 420-427]
+                </div>
+            </div>
+        </section>
+        
+        <!-- THE FARTODYNAMIC EQUATION -->
+        <section class="section">
+            <h2>📊 THEORETICAL FLATODYNAMICS</h2>
+            <div class="fartodynamic-equation">
+                <div class="equation-label">FARTODYNAMIC EQUATION</div>
+                <div class="equation">
+                    F<sub>total</sub> = ∑(C<sub>i</sub> × P<sub>i</sub> × t) + ∇²(V<sub>s</sub>) · ρ<sub>g</sub>
+                </div>
+                <p>Where F<sub>total</sub> represents total flatulence intensity, C<sub>i</sub> is the concentration of gas i, P<sub>i</sub> is the partial pressure, t is time, V<sub>s</sub> is sphincter velocity, and ρ<sub>g</sub> is gas density.</p>
+                <div class="citation">
+                    [Ne, M. et al. (2023). "Computational Approaches to Quantifying Human Flatulence". Proceedings of the International Symposium on Flatodynamics, 13(2), pp. 80-95]
+                </div>
+            </div>
+        </section>
+        
+        <!-- FART INTENSITY CHART -->
+        <section class="section">
+            <h2>📈 WEEKLY EMISSION INTENSITY TRACKER</h2>
+            <div class="chart-container">
+                <canvas id="fart-intensity-chart"></canvas>
+            </div>
+            <div class="citation">
+                [Unit 420-FRT. (2024). "Temporal Variations in Human Flatulence Intensity: A 7-Day Analysis". Automated Flatulence Tracking Quarterly, 18(3), pp. 210-228]
+            </div>
+        </section>
+        
+        <!-- SCIENTIFIC STAFF DIRECTORY -->
+        <section class="section">
+            <h2>👨‍🔬 RESEARCH PERSONNEL DIRECTORY</h2>
+            <p class="meme-scientific">Meet the distinguished flatulence researchers behind FartLab's groundbreaking work:</p>
+            
+            <div class="staff-card">
+                <div class="staff-name">Dr. Rudolf N. Gasworthy, Ph.D.</div>
+                <div class="staff-title">Senior Flatusologist, Director of Intestinal Dynamics</div>
+                <div class="staff-bio">Dr. Gasworthy pioneered the field of computational flatology after a breakthrough discovery during his postdoctoral research at MIT (Methane Institute of Technology). His revolutionary "Gas-Expansion Theorem" transformed our understanding of sphincter oscillation dynamics. When not in the lab, he enjoys brewing kombucha and long silent retreats.</div>
+                <div class="citation">"The modern flatulence researcher must approach the subject with both scientific rigor and a strong air filter." - Dr. Gasworthy, 2023</div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-name">Prof. Meth A. Ne, DSc.</div>
+                <div class="staff-title">Acoustic Waveform Specialist, Chair of Rectal Resonance Studies</div>
+                <div class="staff-bio">Professor Ne's groundbreaking work in anal acoustics earned her the prestigious "Golden Trumpet Award" from the International Society of Biological Sound Engineers. Her acoustic separation algorithm can identify the unique 'fart fingerprint' of any individual with 97.3% accuracy, a technology now being adopted by high-security facilities worldwide.</div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-name">AI Unit 420-FRT</div>
+                <div class="staff-title">Autonomous Emission Tracking System</div>
+                <div class="staff-bio">Developed in 2023, this advanced neural network processes over 10,000 flatulence samples daily. The system has developed unexpectedly sophisticated analytical capabilities, including the ability to predict bean consumption patterns with uncanny accuracy. Researchers remain puzzled by its occasional output message: "THE METHANE MUST FLOW."</div>
+            </div>
+        </section>
+        
         <section id="build" class="section">
             <h2>🧪 BUILD-A-FART LAB</h2>
             <p class="meme-scientific">Welcome to our state-of-the-art flatulence synthesis laboratory. Adjust molecular parameters and acoustic properties to create your perfect gaseous emission.</p>
-            <div class="meme-scientific">
-                In this scientifically rigorous gas chamber, we synthesize flatulence with atomic precision.
-            </div>
+            
             <div class="formula-box">
-                <p>According to Fartodynamic Theory, a fart (or <em>flatus</em> in scientific nomenclature) is expressed by the following equation:</p>
-                <div class="formula">F = ∫(N₂ + H₂ + CO₂ + CH₄ + O₂ + H₂S) · dt</div>
-                <p>Where composition varies based on dietary substrates, microbial population dynamics, and intestinal transit parameters.</p>
+                <p>In scientific terms, a fart (or <em>flatus</em>) is composed of several gases in varying proportions:</p>
+                <div class="formula">Fart = ∫(N₂ + H₂ + CO₂ + CH₄ + O₂ + H₂S) · dt</div>
+                <p>The exact composition varies by diet, gut microbiome, and individual physiology.</p>
             </div>
             
             <div class="gas-container">
                 <div class="gas-card">
                     <div class="gas-formula">N₂</div>
                     <div class="gas-name">Nitrogen</div>
-                    <p>The primary volumetric component, originating from swallowed atmospheric gas.</p>
+                    <p>The main component of most farts, accounting for up to 90% of gas volume.</p>
                     <span class="percentage">20-90%</span>
                 </div>
                 
                 <div class="gas-card">
                     <div class="gas-formula">H₂</div>
                     <div class="gas-name">Hydrogen</div>
-                    <p>Product of carbohydrate fermentation by anaerobic microbiota in the large intestine.</p>
+                    <p>Produced by bacterial fermentation of carbohydrates in the large intestine.</p>
                     <span class="percentage">0-50%</span>
                 </div>
                 
                 <div class="gas-card">
                     <div class="gas-formula">CO₂</div>
                     <div class="gas-name">Carbon Dioxide</div>
-                    <p>Byproduct of acid neutralization and microbial respiration in the intestinal lumen.</p>
+                    <p>Produced during digestion and from blood circulation into the intestines.</p>
                     <span class="percentage">10-30%</span>
                 </div>
                 
                 <div class="gas-card">
                     <div class="gas-formula">CH₄</div>
                     <div class="gas-name">Methane</div>
-                    <p>Synthesized by methanogenic archaea. Methanogen colonization exhibits genetic determinism.</p>
+                    <p>Not everyone produces this! Only ~30% of people have methanogens in their gut.</p>
                     <span class="percentage">0-10%</span>
                 </div>
                 
                 <div class="gas-card">
                     <div class="gas-formula">O₂</div>
                     <div class="gas-name">Oxygen</div>
-                    <p>Residual atmospheric gas that survives the reductive environment of the intestinal tract.</p>
+                    <p>Small amounts of swallowed oxygen that passes through the digestive system.</p>
                     <span class="percentage">0-10%</span>
                 </div>
                 
                 <div class="gas-card">
                     <div class="gas-formula">H₂S</div>
                     <div class="gas-name">Hydrogen Sulfide</div>
-                    <p>The olfactory signature compound. Even at parts-per-billion concentrations, induces aversive responses.</p>
+                    <p>The infamous "rotten egg" smell. Present in tiny amounts but packs a powerful punch!</p>
                     <span class="percentage">Trace</span>
                 </div>
             </div>
             
-            <div class="fun-fact">
-                <p>Sulfur-containing compounds like hydrogen sulfide (H₂S) and methanethiol (CH₃SH) contribute <0.001% of total flatus volume but are detectable by the human olfactory system at concentrations as low as 0.5 parts per billion. Talk about amplification!</p>
+            <div id="interactive-fart">
+                <h2>🔬 F.A.R.T. SYNTHESIZER v2.0</h2>
+                <p>F.A.R.T. Synthesizer v2.0: Create, Analyze, and Experience Your Custom Flatulence</p>
+                
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>Nitrogen (N₂)</span>
+                        <span id="n2-value">60%</span>
+                    </div>
+                    <input type="range" id="n2-slider" min="20" max="90" value="60">
+                    
+                    <div class="slider-label">
+                        <span>Hydrogen (H₂)</span>
+                        <span id="h2-value">20%</span>
+                    </div>
+                    <input type="range" id="h2-slider" min="0" max="50" value="20">
+                    
+                    <div class="slider-label">
+                        <span>Carbon Dioxide (CO₂)</span>
+                        <span id="co2-value">15%</span>
+                    </div>
+                    <input type="range" id="co2-slider" min="10" max="30" value="15">
+                    
+                    <div class="slider-label">
+                        <span>Methane (CH₄)</span>
+                        <span id="ch4-value">3%</span>
+                    </div>
+                    <input type="range" id="ch4-slider" min="0" max="10" value="3">
+                    
+                    <div class="slider-label">
+                        <span>Oxygen (O₂)</span>
+                        <span id="o2-value">2%</span>
+                    </div>
+                    <input type="range" id="o2-slider" min="0" max="10" value="2">
+                    
+                    <div class="slider-label">
+                        <span>Hydrogen Sulfide (H₂S) - The Stinky Part</span>
+                        <span id="h2s-value">0.1%</span>
+                    </div>
+                    <input type="range" id="h2s-slider" min="0" max="1" step="0.1" value="0.1">
+                </div>
+                
+                <div id="composition-display">
+                    <p>Total Composition: <span id="total-percentage">100.1%</span></p>
+                    <div id="composition-warning" style="color: red; display: none;">Warning: Total should add up to approximately 100%</div>
+                </div>
+                
+                <!-- Sound Settings -->
+                <div class="sound-controls">
+                    <h3><i class="fas fa-volume-up"></i> Acoustic Parameters</h3>
+                    <p>Configure the sonic properties of your gaseous emission</p>
+                    
+                    <div class="sound-settings">
+                        <div class="sound-setting">
+                            <label for="pitch">Pitch:</label>
+                            <input type="range" id="pitch" min="0" max="100" value="50">
+                        </div>
+                        
+                        <div class="sound-setting">
+                            <label for="duration">Duration:</label>
+                            <input type="range" id="duration" min="0" max="100" value="30">
+                        </div>
+                        
+                        <div class="sound-setting">
+                            <label for="wetness">Wetness:</label>
+                            <input type="range" id="wetness" min="0" max="100" value="20">
+                        </div>
+                        
+                        <div class="sound-setting">
+                            <label for="reverb">Echo Chamber:</label>
+                            <input type="range" id="reverb" min="0" max="100" value="10">
+                        </div>
+                    </div>
+                    
+                    <div id="visualizer"></div>
+                </div>
+                
+                <button id="analyze-btn">Analyze & Synthesize Fart</button>
+                <button id="play-fart-btn" class="sound-btn"><i class="fas fa-play"></i> Play Flatulence</button>
+                <button id="mint-fart-btn" class="nft-button"><i class="fas fa-cube"></i> Mint This Fart as NFT</button>
+                
+                <div class="fart-result" id="fart-analysis">
+                    <p>Adjust the sliders and click analyze to discover the properties of your custom fart!</p>
+                </div>
+                
+                <div class="fart-score">
+                    <div class="fart-score-item">
+                        <div class="fart-score-label">VOLUME</div>
+                        <div class="fart-score-value" id="volume-score">0</div>
+                    </div>
+                    <div class="fart-score-item">
+                        <div class="fart-score-label">STANK</div>
+                        <div class="fart-score-value" id="stank-score">0</div>
+                    </div>
+                    <div class="fart-score-item">
+                        <div class="fart-score-label">VELOCITY</div>
+                        <div class="fart-score-value" id="velocity-score">0</div>
+                    </div>
+                    <div class="fart-score-item">
+                        <div class="fart-score-label">F.A.R.T. SCORE</div>
+                        <div class="fart-score-value" id="fart-score">0</div>
+                    </div>
+                </div>
             </div>
         </section>
         
-        <section id="interactive-fart" class="section">
-            <h2>🔬 F.A.R.T. SYNTHESIZER v2.0</h2>
-            <p>Flatus Algorithmic Rendering Technology: Adjust molecular parameters to generate a custom gaseous emission.</p>
+        <section id="fart-science" class="section">
+            <h2>📊 ANAL-YTICS: The Science Behind the Smell</h2>
+            <div class="highlight">
+                <p>According to peer-reviewed flatulence research, the typical human produces between 0.5 and 1.5 liters of intestinal gas per day, released through the anal sphincter in 10-20 discrete emission events. Volume, frequency, and olfactory characteristics are determined by the following variables:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Impact on Flatulence Metrics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dietary Substrate</td>
+                            <td>Fermentable oligosaccharides, disaccharides, monosaccharides, and polyols (FODMAPs) significantly increase microbial gas production</td>
+                        </tr>
+                        <tr>
+                            <td>Microbiome Composition</td>
+                            <td>Methanobrevibacter smithii presence determines methane production; Desulfovibrio species increase H₂S synthesis</td>
+                        </tr>
+                        <tr>
+                            <td>Pathophysiological States</td>
+                            <td>IBS, carbohydrate malabsorption syndromes, and dysbiosis alter fermentation patterns</td>
+                        </tr>
+                        <tr>
+                            <td>Aerophagia</td>
+                            <td>Rapid ingestion, carbonated beverage consumption, and anxiety-related behaviors increase N₂ and O₂ content</td>
+                        </tr>
+                        <tr>
+                            <td>Transit Time</td>
+                            <td>Inversely correlated with fermentation duration; faster transit = less complete fermentation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
-            <div class="slider-container">
-                <div class="slider-label">
-                    <span>Nitrogen (N₂)</span>
-                    <span id="n2-value">60%</span>
-                </div>
-                <input type="range" id="n2-slider" min="20" max="90" value="60">
+            <div class="meme-scientific">
+                <p>In layman's terms: what goes in determines what comes out, and how badly it wrecks the room.</p>
+            </div>
+        </section>
+        
+        <section id="methane-metrics" class="section">
+            <h2>📈 METHANE METRICS: Gas Analysis</h2>
+            
+            <div class="fun-fact">
+                <p>Flatus exit velocity has been experimentally measured at 3.05 m/s (10 ft/s), approximately 6.8 mph. This creates sufficient acoustic turbulence for the characteristic sound.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p>The combustibility of flatus has been verified in multiple studies. The hydrogen component can ignite at concentrations as low as 4% in air, while methane requires a 5.4% threshold concentration. WARNING: Self-experimentation is strongly discouraged.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p>Methanogenesis capability follows a bimodal distribution in human populations. Only 33-50% of individuals harbor sufficient methanogenic archaea to produce detectable CH₄. This trait shows strong familial clustering.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p>Flatulence frequency follows a normal distribution with mean μ = 13.6 events/day and standard deviation σ = 5.2. Total daily gas volume averages 705 mL ± 170 mL, equivalent to approximately one wine bottle.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p>The human olfactory system can detect hydrogen sulfide at 0.5 ppb, while the lethal concentration is approximately 1000 ppm, representing a 2,000,000-fold safety margin. Evolution has prioritized extremely sensitive detection of potential biological hazards.</p>
+            </div>
+        </section>
+        
+        <section id="faq" class="section">
+            <h2>🧻 WHAT THE FART? (FAQ)</h2>
+            
+            <div class="fun-fact">
+                <p><strong>Q: What is FartLab?</strong><br>
+                A: FartLab is a scientifically accurate gas analysis platform that enables users to study, synthesize, and mint custom flatulence compositions using our proprietary Flatus Algorithmic Rating Technology (F.A.R.T.).</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><strong>Q: Is this real science?</strong><br>
+                A: Absolutely. The chemical composition data is based on peer-reviewed flatology research. The acoustic simulations utilize advanced computational fluid dynamics to model sphincter oscillations accurately.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><strong>Q: What does the F.A.R.T. Score measure?</strong><br>
+                A: The Flatus Algorithmic Rating Tracker provides a comprehensive assessment based on Volume (acoustic intensity), Stank (olfactory impact factor), and Velocity (exit kinetics). This proprietary metric quantifies the overall quality and memorability of a gaseous emission.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><strong>Q: How do I mint a fart?</strong><br>
+                A: After customizing your ideal gas composition and acoustic properties, click "Mint This Fart as NFT" to tokenize your creation on the blockchain. Each emission is unique and cannot be duplicated.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><strong>Q: Will I die?</strong><br>
+                A: Maybe. Studies show that exposure to high concentrations of hydrogen sulfide can be lethal. However, statistical analysis indicates that the probability of self-asphyxiation via flatulence is approximately 0.0000042%—roughly equivalent to the chance of being simultaneously struck by lightning and a meteorite while winning the lottery.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Flatulence Formula Laboratories | Mint the Gas, Embrace the Blast</p>
+        <p><small>Disclaimer: This website was created for educational and entertainment purposes. Consult a gastroenterologist for concerning emissions. Not financial advice.</small></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // Interactive sliders for the custom fart composition
+        const sliders = {
+            'n2': document.getElementById('n2-slider'),
+            'h2': document.getElementById('h2-slider'),
+            'co2': document.getElementById('co2-slider'),
+            'ch4': document.getElementById('ch4-slider'),
+            'o2': document.getElementById('o2-slider'),
+            'h2s': document.getElementById('h2s-slider')
+        };
+        
+        const soundSliders = {
+            'pitch': document.getElementById('pitch'),
+            'duration': document.getElementById('duration'),
+            'wetness': document.getElementById('wetness'),
+            'reverb': document.getElementById('reverb')
+        };
+        
+        const valueDisplays = {
+            'n2': document.getElementById('n2-value'),
+            'h2': document.getElementById('h2-value'),
+            'co2': document.getElementById('co2-value'),
+            'ch4': document.getElementById('ch4-value'),
+            'o2': document.getElementById('o2-value'),
+            'h2s': document.getElementById('h2s-value')
+        };
+        
+        const totalPercentage = document.getElementById('total-percentage');
+        const compositionWarning = document.getElementById('composition-warning');
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const playFartBtn = document.getElementById('play-fart-btn');
+        const mintFartBtn = document.getElementById('mint-fart-btn');
+        const fartAnalysis = document.getElementById('fart-analysis');
+        const volumeScore = document.getElementById('volume-score');
+        const stankScore = document.getElementById('stank-score');
+        const velocityScore = document.getElementById('velocity-score');
+        const fartScore = document.getElementById('fart-score');
+        const generateNameBtn = document.getElementById('generate-name-btn');
+        const fartNameDisplay = document.getElementById('fart-name-display');
+        
+        // Create audio context for fart sounds
+        let audioContext;
+        let fartSound;
+        
+        // Initialize visualizer
+        const visualizer = document.getElementById('visualizer');
+        for (let i = 0; i < 32; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'visualizer-bar';
+            bar.style.left = (i * (100 / 32)) + '%';
+            bar.style.height = '0px';
+            visualizer.appendChild(bar);
+        }
+        
+        // Update slider value displays and calculate total
+        function updateValues() {
+            let total = 0;
+            
+            for (const gas in sliders) {
+                const value = parseFloat(sliders[gas].value);
+                valueDisplays[gas].textContent = value + '%';
+                total += value;
+            }
+            
+            totalPercentage.textContent = total.toFixed(1) + '%';
+            
+            // Show warning if total is significantly off from 100%
+            if (Math.abs(total - 100) > 5) {
+                compositionWarning.style.display = 'block';
+            } else {
+                compositionWarning.style.display = 'none';
+            }
+        }
+        
+        // Add event listeners to all sliders
+        for (const gas in sliders) {
+            sliders[gas].addEventListener('input', updateValues);
+        }
+        
+        // Initialize values
+        updateValues();
+        
+        // Generate fart sound based on parameters
+        function generateFartSound() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            
+            const n2 = parseFloat(sliders['n2'].value);
+            const h2 = parseFloat(sliders['h2'].value);
+            const ch4 = parseFloat(sliders['ch4'].value);
+            const h2s = parseFloat(sliders['h2s'].value);
+            const pitch = parseFloat(soundSliders['pitch'].value);
+            const duration = parseFloat(soundSliders['duration'].value);
+            const wetness = parseFloat(soundSliders['wetness'].value);
+            const reverbAmount = parseFloat(soundSliders['reverb'].value);
+            
+            // Calculate base duration (0.2 to 2 seconds)
+            const baseDuration = 0.2 + (duration / 100) * 1.8;
+            
+            // Create oscillator for the base sound
+            const oscillator = audioContext.createOscillator();
+            oscillator.type = 'sine';
+            
+            // Create noise for the turbulence
+            const bufferSize = 2 * audioContext.sampleRate;
+            const noiseBuffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+            const output = noiseBuffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                output[i] = Math.random() * 2 - 1;
+            }
+            
+            const noise = audioContext.createBufferSource();
+            noise.buffer = noiseBuffer;
+            
+            // Create gain nodes
+            const masterGain = audioContext.createGain();
+            const noiseGain = audioContext.createGain();
+            const oscillatorGain = audioContext.createGain();
+            
+            // Create filter for noise
+            const noiseFilter = audioContext.createBiquadFilter();
+            noiseFilter.type = 'lowpass';
+            noiseFilter.frequency.value = 400 + (1 - h2 / 50) * 600;
+            noiseFilter.Q.value = 15;
+            
+            // Create filter for oscillator
+            const oscillatorFilter = audioContext.createBiquadFilter();
+            oscillatorFilter.type = 'lowpass';
+            oscillatorFilter.frequency.value = 100 + pitch;
+            
+            // Create reverb for echo chamber effect
+            const convolver = audioContext.createConvolver();
+            const reverbBuffer = audioContext.createBuffer(2, audioContext.sampleRate * 3, audioContext.sampleRate);
+            const leftChannel = reverbBuffer.getChannelData(0);
+            const rightChannel = reverbBuffer.getChannelData(1);
+            
+            for (let i = 0; i < reverbBuffer.length; i++) {
+                leftChannel[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioContext.sampleRate * reverbAmount / 25));
+                rightChannel[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioContext.sampleRate * reverbAmount / 25));
+            }
+            
+            convolver.buffer = reverbBuffer;
+            
+            // Connect everything
+            noise.connect(noiseFilter);
+            noiseFilter.connect(noiseGain);
+            
+            oscillator.connect(oscillatorFilter);
+            oscillatorFilter.connect(oscillatorGain);
+            
+            noiseGain.connect(masterGain);
+            oscillatorGain.connect(masterGain);
+            
+// Add reverb if specified
+            if (reverbAmount > 10) {
+                masterGain.connect(convolver);
+                convolver.connect(audioContext.destination);
+            }
+            
+            masterGain.connect(audioContext.destination);
+            
+            // Set initial values
+            masterGain.gain.value = 0;
+            noiseGain.gain.value = 0.5;
+            oscillatorGain.gain.value = 0.5;
+            
+            // Determine oscillator frequency based on pitch and gas composition
+            const baseFreq = 50 + (pitch / 2);
+            oscillator.frequency.value = baseFreq;
+            
+            // Schedule parameter changes
+            const now = audioContext.currentTime;
+            
+            // Main envelope
+            masterGain.gain.setValueAtTime(0, now);
+            masterGain.gain.linearRampToValueAtTime(0.8, now + 0.01);
+            
+            // Wet sounds have more variability
+            if (wetness > 50) {
+                // Add bubbling effects for wet farts
+                for (let i = 0; i < 8; i++) {
+                    const bubbleTime = now + (baseDuration * (i / 8));
+                    oscillator.frequency.setValueAtTime(baseFreq + Math.random() * 20, bubbleTime);
+                    masterGain.gain.setValueAtTime(0.7 + Math.random() * 0.3, bubbleTime);
+                }
+            } else {
+                // Drier, more consistent tone
+                oscillator.frequency.linearRampToValueAtTime(baseFreq * 0.7, now + baseDuration * 0.8);
+            }
+            
+            // End envelope
+            masterGain.gain.setValueAtTime(masterGain.gain.value, now + baseDuration - 0.05);
+            masterGain.gain.linearRampToValueAtTime(0, now + baseDuration);
+            
+            // Start the sound
+            oscillator.start(now);
+            noise.start(now);
+            
+            // Stop the sound
+            oscillator.stop(now + baseDuration + 0.1);
+            noise.stop(now + baseDuration + 0.1);
+            
+            return {
+                context: audioContext,
+                duration: baseDuration,
+                startTime: now
+            };
+        }
+        
+        // Animate visualizer
+        function animateVisualizer(fartSound) {
+            const bars = document.querySelectorAll('.visualizer-bar');
+            const startTime = fartSound.startTime;
+            const duration = fartSound.duration;
+            const context = fartSound.context;
+            
+            // Create analyzer
+            const analyzer = context.createAnalyser();
+            analyzer.fftSize = 64;
+            
+            const dataArray = new Uint8Array(analyzer.frequencyBinCount);
+            
+            function updateVisualizer() {
+                const currentTime = context.currentTime;
+                if (currentTime < startTime + duration + 0.1) {
+                    analyzer.getByteFrequencyData(dataArray);
+                    
+                    for (let i = 0; i < Math.min(bars.length, dataArray.length); i++) {
+                        const barHeight = dataArray[i] / 2;
+                        bars[i].style.height = barHeight + 'px';
+                    }
+                    
+                    requestAnimationFrame(updateVisualizer);
+                } else {
+                    // Reset bars
+                    for (let i = 0; i < bars.length; i++) {
+                        bars[i].style.height = '0px';
+                    }
+                }
+            }
+            
+            updateVisualizer();
+        }
+        
+        // Generate random fart name
+        function generateFartName() {
+            const prefixes = [
+                "Type I", "Type II", "Type III", "Type IV", "Type V",
+                "Alpha", "Beta", "Gamma", "Delta", "Omega",
+                "Proto", "Neo", "Ultra", "Hyper", "Meta"
+            ];
+            
+            const compositions = [
+                "Hydrogen-Rich", "Methane-Dominant", "Sulfide-Infused", "Nitrogen-Heavy", "Carbon-Dense",
+                "Oxygen-Depleted", "Trace-Element", "Mixed-Gas", "Compound", "Volatile"
+            ];
+            
+            const characteristics = [
+                "Sonic", "Silent", "Resonant", "Acoustic", "Olfactory",
+                "Extended", "Burst", "Sustained", "Pulsating", "Pressurized"
+            ];
+            
+            const classifications = [
+                "Flatus", "Emission", "Expulsion", "Release", "Discharge",
+                "Exhalation", "Eruption", "Surge", "Wave", "Plume"
+            ];
+            
+            const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+            const randomComp = compositions[Math.floor(Math.random() * compositions.length)];
+            const randomChar = characteristics[Math.floor(Math.random() * characteristics.length)];
+            const randomClass = classifications[Math.floor(Math.random() * classifications.length)];
+            
+            return `${randomPrefix} ${randomComp} ${randomChar} ${randomClass}`;
+        }
+        
+        // Analyze button click handler
+        analyzeBtn.addEventListener('click', function() {
+            const n2 = parseFloat(sliders['n2'].value);
+            const h2 = parseFloat(sliders['h2'].value);
+            const co2 = parseFloat(sliders['co2'].value);
+            const ch4 = parseFloat(sliders['ch4'].value);
+            const o2 = parseFloat(sliders['o2'].value);
+            const h2s = parseFloat(sliders['h2s'].value);
+            
+            // Get sound parameters
+            const pitch = parseFloat(soundSliders['pitch'].value);
+            const duration = parseFloat(soundSliders['duration'].value);
+            const wetness = parseFloat(soundSliders['wetness'].value);
+            const reverb = parseFloat(soundSliders['reverb'].value);
+            
+            let analysis = '';
+            
+            // Calculate scores
+            const stankValue = Math.min(10, Math.round(h2s * 10) + Math.floor(ch4 / 3));
+            const volumeValue = Math.round((100 - pitch) / 10) + Math.floor(duration / 20);
+            const velocityValue = Math.round((h2 / 10) + (n2 / 20));
+            const totalFartScore = Math.round((stankValue + volumeValue + velocityValue) / 3 * 10);
+            
+            // Update score displays
+            stankScore.textContent = stankValue;
+            volumeScore.textContent = volumeValue;
+            velocityScore.textContent = velocityValue;
+            fartScore.textContent = totalFartScore;
+            
+            // Determine smell characteristics based on gas composition
+            let smellDescription = '';
+            let smellIntensity = '';
+            let soundDescription = '';
+            let soundIntensity = '';
+            
+            // Smell intensity based on sulfur content
+            if (h2s < 0.2) {
+                smellIntensity = 'barely detectable';
+            } else if (h2s < 0.4) {
+                smellIntensity = 'mild';
+            } else if (h2s < 0.6) {
+                smellIntensity = 'moderate';
+            } else if (h2s < 0.8) {
+                smellIntensity = 'potent';
+            } else {
+                smellIntensity = 'extremely intense';
+            }
+            
+            // Smell description based on gas composition
+            if (h2s > 0.5 && ch4 > 5) {
+                smellDescription = 'rotten egg with swampy undertones';
+            } else if (h2s > 0.5) {
+                smellDescription = 'pure sulfuric rotten egg';
+            } else if (ch4 > 5) {
+                smellDescription = 'swampy organic decay';
+            } else if (co2 > 25) {
+                smellDescription = 'musty and stale';
+            } else if (h2 > 30) {
+                smellDescription = 'slightly acrid yet mostly odorless';
+            } else {
+                smellDescription = 'generic biological odor';
+            }
+            
+            // Sound intensity based on parameters
+            if (duration < 30) {
+                if (pitch > 70) {
+                    soundIntensity = 'quick, high-pitched';
+                } else {
+                    soundIntensity = 'brief, subtle';
+                }
+            } else if (duration < 60) {
+                if (pitch > 70) {
+                    soundIntensity = 'moderate-length, squeaky';
+                } else if (pitch < 30) {
+                    soundIntensity = 'medium, low-toned';
+                } else {
+                    soundIntensity = 'average duration and pitch';
+                }
+            } else {
+                if (pitch > 70) {
+                    soundIntensity = 'extended, high-frequency';
+                } else if (pitch < 30) {
+                    soundIntensity = 'lengthy, bass-heavy';
+                } else {
+                    soundIntensity = 'prolonged, moderate pitch';
+                }
+            }
+            
+            // Sound description based on parameters
+            if (wetness > 70) {
+                soundDescription = 'wet and bubbling';
+            } else if (wetness > 40) {
+                soundDescription = 'partially moist';
+            } else {
+                soundDescription = 'dry and airy';
+            }
+            
+            // Add reverb description
+            let reverbDescription = '';
+            if (reverb > 70) {
+                reverbDescription = 'with significant echo (likely in bathroom setting)';
+            } else if (reverb > 40) {
+                reverbDescription = 'with moderate reverberation';
+            } else if (reverb > 10) {
+                reverbDescription = 'with slight resonance';
+            }
+            
+            // Determine flammability based on methane and hydrogen
+            let flammability = '';
+            const flammableGases = h2 + ch4;
+            if (flammableGases < 10) {
+                flammability = 'Non-flammable';
+            } else if (flammableGases < 25) {
+                flammability = 'Mildly flammable';
+            } else if (flammableGases < 40) {
+                flammability = 'Definitely flammable';
+            } else {
+                flammability = 'Highly flammable - caution advised!';
+            }
+            
+            // Generate analysis with scientific terminology
+            analysis = `
+                <h3>F.A.R.T. Analysis Report</h3>
                 
-                <div class="slider-label">
-                    <span>Hydrogen (H₂)</span>
-                    <span id="h2-value">20%</span>
-                </div>
-                <input type="range" id="h2-slider" min="0" max="50" value="20">
+                <h4>Olfactory Properties:</h4>
+                <p>This gaseous emission would produce a <strong>${smellIntensity}</strong> odor characterized as <strong>${smellDescription}</strong>. The hydrogen sulfide concentration of ${h2s}% creates the primary olfactory signature, while the ${ch4}% methane content contributes secondary notes.</p>
                 
-                <div class="slider-label">
-                    <span>Carbon Dioxide (CO₂)</span>
-                    <span id="co2-value">15%</span>
-                </div>
-                <input type="range" id="co2-slider" min="10" max="30" value="15">
+                <h4>Acoustic Characteristics:</h4>
+                <p>Expected sound profile: <strong>${soundIntensity}, ${soundDescription}</strong> ${reverbDescription}. The acoustic waveform would exhibit turbulent flow patterns typical of a sphincter oscillation frequency corresponding to the parameters selected.</p>
                 
-                <div class="slider-label">
-                    <span>Methane (CH₄)</span>
-                    <span id="ch4-value">3%</span>
-                </div>
-                <input type="range" id="ch4-slider" min="0" max="10" value="3">
+                <h4>Physical Properties:</h4>
+                <p><strong>Gas composition:</strong> ${n2}% N₂, ${h2}% H₂, ${co2}% CO₂, ${ch4}% CH₄, ${o2}% O₂, ${h2s}% H₂S</p>
+                <p><strong>Flammability assessment:</strong> ${flammability}</p>
+                <p><strong>Diffusion rate:</strong> ${Math.round(80 + (h2 * 0.5) - (co2 * 0.3))}% of standard atmospheric dispersion</p>
                 
-                <div class="slider-label">
-                    <span>Oxygen (O₂)</span>
-                    <span id="o2-value">2%</span>
+                <h4>Social Impact Assessment:</h4>
+                <p>This emission would clear approximately ${Math.min(100, Math.round(10 + (h2s * 100) + (totalFartScore * 0.8)))}% of an average-sized elevator within ${Math.max(2, Math.round(10 - h2s * 10))} seconds.</p>
+                <p>Recommended safe distance for bystanders: ${Math.round(1 + (stankValue * 0.3))} meters.</p>
+                
+                <h4>F.A.R.T. Score Breakdown:</h4>
+                <ul>
+                    <li>Volume Rating: ${volumeValue}/10</li>
+                    <li>Stank Factor: ${stankValue}/10</li>
+                    <li>Velocity Coefficient: ${velocityValue}/10</li>
+                    <li>Overall F.A.R.T. Score: ${totalFartScore}/100</li>
+                </ul>
+                
+                <p>Press the "Play Flatulence" button below to experience an audio simulation of this custom emission.</p>
+            `;
+            
+            fartAnalysis.innerHTML = analysis;
+            
+            // Generate and store the fart sound for later playback
+            fartSound = generateFartSound();
+        });
+        
+        // Play fart button click handler
+        playFartBtn.addEventListener('click', function() {
+            if (fartSound) {
+                // If we already have a sound, generate a new one
+                fartSound = generateFartSound();
+                
+                // Animate the visualizer
+                animateVisualizer(fartSound);
+            } else {
+                // First generate the sound
+                fartSound = generateFartSound();
+                
+                // Animate the visualizer
+                animateVisualizer(fartSound);
+                
+                // Also trigger the analysis
+                analyzeBtn.click();
+            }
+        });
+        
+        // Mint button handler
+        mintFartBtn.addEventListener('click', function() {
+            alert("Congratulations! Your custom fart has been minted as NFT #" + Math.floor(Math.random() * 10000) + " on the Fartchain. This digital asset can now be traded, collected, or used to clear virtual rooms.");
+        });
+        
+        // Generate fart name button handler
+        generateNameBtn.addEventListener('click', function() {
+            const newName = generateFartName();
+            fartNameDisplay.textContent = newName;
+            fartNameDisplay.style.color = `hsl(${Math.random() * 60 + 180}, 70%, 60%)`;
+        });
+        
+        // Create the intensity chart
+        function createIntensityChart() {
+            const ctx = document.getElementById('fart-intensity-chart').getContext('2d');
+            
+            // Generate random data for the week
+            const data = [
+                Math.random() * 30 + 40,  // Monday
+                Math.random() * 30 + 50,  // Tuesday
+                Math.random() * 30 + 60,  // Wednesday
+                Math.random() * 30 + 70,  // Thursday (Bean Day)
+                Math.random() * 30 + 50,  // Friday
+                Math.random() * 30 + 40,  // Saturday
+                Math.random() * 30 + 30   // Sunday
+            ];
+            
+            // Create gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, 'rgba(6, 182, 212, 0.8)');
+            gradient.addColorStop(1, 'rgba(6, 182, 212, 0.1)');
+            
+            // Create chart
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [
+                        'Monday', 
+                        'Tuesday', 
+                        'Wednesday', 
+                        'Thursday (Bean Day)', 
+                        'Friday', 
+                        'Saturday', 
+                        'Sunday'
+                    ],
+                    datasets: [{
+                        label: 'Flatulence Intensity',
+                        data: data,
+                        borderColor: 'rgba(6, 182, 212, 1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        backgroundColor: gradient,
+                        pointBackgroundColor: 'rgba(249, 115, 22, 1)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(241, 245, 249, 0.8)'
+                            },
+                            title: {
+                                display: true,
+                                text: 'PPM (Parts Per Million)',
+                                color: 'rgba(241, 245, 249, 0.8)',
+                                font: {
+                                    family: 'Courier New',
+                                    size: 12
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(241, 245, 249, 0.8)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(241, 245, 249, 0.8)',
+                                font: {
+                                    family: 'Courier New'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                            titleFont: {
+                                family: 'Courier New'
+                            },
+                            bodyFont: {
+                                family: 'Courier New'
+                            },
+                            callbacks: {
+                                label: function(context) {
+                                    return `Intensity: ${context.raw.toFixed(1)} PPM`;
+                                },
+                                afterLabel: function(context) {
+                                    const value = context.raw;
+                                    if (value > 70) {
+                                        return 'WARNING: High intensity detected!';
+                                    } else if (value > 50) {
+                                        return 'NOTICE: Moderate intensity';
+                                    } else {
+                                        return 'STATUS: Normal range';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            return chart;
+        }
+        
+        // Add some "bubbles" to the header for visual effect
+        const header = document.querySelector('header');
+        for (let i = 0; i < 8; i++) {
+            const size = Math.floor(Math.random() * 50) + 20;
+            const left = Math.floor(Math.random() * 90) + 5;
+            const top = Math.floor(Math.random() * 70) + 10;
+            const delay = Math.floor(Math.random() * 5);
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.left = left + '%';
+            bubble.style.top = top + '%';
+            bubble.style.animationDelay = delay + 's';
+            
+            header.appendChild(bubble);
+        }
+        
+        // Initialize everything when DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create the intensity chart
+            const chart = createIntensityChart();
+            
+            // Update values
+            updateValues();
+            
+            // Generate a random fart name to start
+            generateNameBtn.click();
+        });
+    </script>
+</body>
+</html>
