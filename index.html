@@ -1402,42 +1402,69 @@
         
         // Generate fart sound based on parameters
 async function generateFartSoundTone() {
-    await Tone.start(); // Required to start audio context in modern browsers
+    const pitch = parseFloat(soundSliders['pitch'].value);      // 0–100
+    const duration = parseFloat(soundSliders['duration'].value); // 0–100
+    const wetness = parseFloat(soundSliders['wetness'].value);   // 0–100
+    const reverbAmount = parseFloat(soundSliders['reverb'].value); // 0–100
 
-    const pitch = parseFloat(soundSliders['pitch'].value);
-    const duration = parseFloat(soundSliders['duration'].value);
-    const wetness = parseFloat(soundSliders['wetness'].value);
-    const reverbAmount = parseFloat(soundSliders['reverb'].value);
+    const totalDuration = 0.3 + (duration / 100) * 1.7; // 0.3s – 2.0s
 
-    const totalDuration = 0.2 + (duration / 100) * 2; // 0.2s to 2.2s
-
-    // Oscillator fart layer
+    // Oscillator (tone base)
     const osc = new Tone.Oscillator({
         type: "square",
-        frequency: 60 + pitch,
-        volume: -8
+        frequency: 80 + pitch, // between 80–180Hz
+        volume: -6
     });
 
-    // Noise layer for turbulence
+    // Brown noise (adds chaos)
     const noise = new Tone.Noise("brown");
 
-    const noiseFilter = new Tone.Filter(400 + (wetness * 5), "lowpass");
-    const noiseAmp = new Tone.Gain(0.5);
-    const oscAmp = new Tone.Gain(0.4);
+    const noiseFilter = new Tone.Filter({
+        frequency: 200 + wetness * 10,
+        type: "lowpass"
+    });
 
-    // Reverb if wetness or echo selected
+    // Gain controls
+    const oscGain = new Tone.Gain(0).toDestination();
+    const noiseGain = new Tone.Gain(0).toDestination();
+
+    // Reverb
     const reverb = new Tone.Reverb({
-        decay: 2 + (reverbAmount / 30),
+        decay: 1 + reverbAmount / 20,
         wet: reverbAmount / 100
     }).toDestination();
 
-    // Fart dynamics
-    const fartEnvelope = new Tone.Envelope({
-        attack: 0.01,
-        decay: totalDuration * 0.3,
-        sustain: 0.5,
-        release: 0.1
-    });
+    // Routing
+    osc.connect(oscGain);
+    oscGain.connect(reverb);
+
+    noise.connect(noiseFilter);
+    noiseFilter.connect(noiseGain);
+    noiseGain.connect(reverb);
+
+    // Timing
+    const now = Tone.now();
+
+    // Manual gain shaping (acts like envelope)
+    oscGain.gain.setValueAtTime(0, now);
+    oscGain.gain.linearRampToValueAtTime(0.5, now + 0.05);
+    oscGain.gain.linearRampToValueAtTime(0, now + totalDuration);
+
+    noiseGain.gain.setValueAtTime(0, now);
+    noiseGain.gain.linearRampToValueAtTime(0.3, now + 0.05);
+    noiseGain.gain.linearRampToValueAtTime(0, now + totalDuration);
+
+    // Start + stop
+    osc.start(now);
+    noise.start(now);
+
+    osc.stop(now + totalDuration + 0.1);
+    noise.stop(now + totalDuration + 0.1);
+
+    // Animate visualizer
+    animateVisualizer({ duration: totalDuration, context: Tone.getContext(), startTime: now });
+}
+
 
 // Connect routing
 osc.connect(oscAmp);
@@ -1860,6 +1887,18 @@ playFartBtn.addEventListener('click', async function () {
             // Generate a random fart name to start
             generateNameBtn.click();
         });
+        let isToneStarted = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+    playFartBtn.addEventListener('click', async () => {
+        if (!isToneStarted) {
+            await Tone.start();
+            isToneStarted = true;
+        }
+        await generateFartSoundTone();
+    });
+});
+
     </script>
 </body>
 </html>
