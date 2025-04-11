@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FartLab: The Science of Gaseous Emissions</title>
@@ -1404,132 +1405,63 @@
         updateValues();
         
         // Generate fart sound based on parameters
-        function generateFartSound() {
-            if (!audioContext) {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            }
-            
-            const n2 = parseFloat(sliders['n2'].value);
-            const h2 = parseFloat(sliders['h2'].value);
-            const ch4 = parseFloat(sliders['ch4'].value);
-            const h2s = parseFloat(sliders['h2s'].value);
-            const pitch = parseFloat(soundSliders['pitch'].value);
-            const duration = parseFloat(soundSliders['duration'].value);
-            const wetness = parseFloat(soundSliders['wetness'].value);
-            const reverbAmount = parseFloat(soundSliders['reverb'].value);
-            
-            // Calculate base duration (0.2 to 2 seconds)
-            const baseDuration = 0.2 + (duration / 100) * 1.8;
-            
-            // Create oscillator for the base sound
-            const oscillator = audioContext.createOscillator();
-            oscillator.type = 'sine';
-            
-            // Create noise for the turbulence
-            const bufferSize = 2 * audioContext.sampleRate;
-            const noiseBuffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
-            const output = noiseBuffer.getChannelData(0);
-            for (let i = 0; i < bufferSize; i++) {
-                output[i] = Math.random() * 2 - 1;
-            }
-            
-            const noise = audioContext.createBufferSource();
-            noise.buffer = noiseBuffer;
-            
-            // Create gain nodes
-            const masterGain = audioContext.createGain();
-            const noiseGain = audioContext.createGain();
-            const oscillatorGain = audioContext.createGain();
-            
-            // Create filter for noise
-            const noiseFilter = audioContext.createBiquadFilter();
-            noiseFilter.type = 'lowpass';
-            noiseFilter.frequency.value = 400 + (1 - h2 / 50) * 600;
-            noiseFilter.Q.value = 15;
-            
-            // Create filter for oscillator
-            const oscillatorFilter = audioContext.createBiquadFilter();
-            oscillatorFilter.type = 'lowpass';
-            oscillatorFilter.frequency.value = 100 + pitch;
-            
-            // Create reverb for echo chamber effect
-            const convolver = audioContext.createConvolver();
-            const reverbBuffer = audioContext.createBuffer(2, audioContext.sampleRate * 3, audioContext.sampleRate);
-            const leftChannel = reverbBuffer.getChannelData(0);
-            const rightChannel = reverbBuffer.getChannelData(1);
-            
-            for (let i = 0; i < reverbBuffer.length; i++) {
-                leftChannel[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioContext.sampleRate * reverbAmount / 25));
-                rightChannel[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioContext.sampleRate * reverbAmount / 25));
-            }
-            
-            convolver.buffer = reverbBuffer;
-            
-            // Connect everything
-            noise.connect(noiseFilter);
-            noiseFilter.connect(noiseGain);
-            
-            oscillator.connect(oscillatorFilter);
-            oscillatorFilter.connect(oscillatorGain);
-            
-            noiseGain.connect(masterGain);
-            oscillatorGain.connect(masterGain);
-            
-            // Add reverb if specified
-            if (reverbAmount > 10) {
-                masterGain.connect(convolver);
-                convolver.connect(audioContext.destination);
-            }
-            
-            masterGain.connect(audioContext.destination);
-            
-            // Set initial values
-            masterGain.gain.value = 0;
-            noiseGain.gain.value = 0.5;
-            oscillatorGain.gain.value = 0.5;
-            
-            // Determine oscillator frequency based on pitch and gas composition
-            const baseFreq = 50 + (pitch / 2);
-            oscillator.frequency.value = baseFreq;
-            
-            // Schedule parameter changes
-            const now = audioContext.currentTime;
-            
-            // Main envelope
-            masterGain.gain.setValueAtTime(0, now);
-            masterGain.gain.linearRampToValueAtTime(0.8, now + 0.01);
-            
-            // Wet sounds have more variability
-            if (wetness > 50) {
-                // Add bubbling effects for wet farts
-                for (let i = 0; i < 8; i++) {
-                    const bubbleTime = now + (baseDuration * (i / 8));
-                    oscillator.frequency.setValueAtTime(baseFreq + Math.random() * 20, bubbleTime);
-                    masterGain.gain.setValueAtTime(0.7 + Math.random() * 0.3, bubbleTime);
-                }
-            } else {
-                // Drier, more consistent tone
-                oscillator.frequency.linearRampToValueAtTime(baseFreq * 0.7, now + baseDuration * 0.8);
-            }
-            
-            // End envelope
-            masterGain.gain.setValueAtTime(masterGain.gain.value, now + baseDuration - 0.05);
-            masterGain.gain.linearRampToValueAtTime(0, now + baseDuration);
-            
-            // Start the sound
-            oscillator.start(now);
-            noise.start(now);
-            
-            // Stop the sound
-            oscillator.stop(now + baseDuration + 0.1);
-            noise.stop(now + baseDuration + 0.1);
-            
-            return {
-                context: audioContext,
-                duration: baseDuration,
-                startTime: now
-            };
-        }
+async function generateFartSoundTone() {
+    await Tone.start(); // Required to start audio context in modern browsers
+
+    const pitch = parseFloat(soundSliders['pitch'].value);
+    const duration = parseFloat(soundSliders['duration'].value);
+    const wetness = parseFloat(soundSliders['wetness'].value);
+    const reverbAmount = parseFloat(soundSliders['reverb'].value);
+
+    const totalDuration = 0.2 + (duration / 100) * 2; // 0.2s to 2.2s
+
+    // Oscillator fart layer
+    const osc = new Tone.Oscillator({
+        type: "square",
+        frequency: 60 + pitch,
+        volume: -8
+    });
+
+    // Noise layer for turbulence
+    const noise = new Tone.Noise("brown");
+
+    const noiseFilter = new Tone.Filter(400 + (wetness * 5), "lowpass");
+    const noiseAmp = new Tone.Gain(0.5);
+    const oscAmp = new Tone.Gain(0.4);
+
+    // Reverb if wetness or echo selected
+    const reverb = new Tone.Reverb({
+        decay: 2 + (reverbAmount / 30),
+        wet: reverbAmount / 100
+    }).toDestination();
+
+    // Fart dynamics
+    const fartEnvelope = new Tone.Envelope({
+        attack: 0.01,
+        decay: totalDuration * 0.3,
+        sustain: 0.5,
+        release: 0.1
+    });
+
+    // Connect routing
+    osc.connect(oscAmp).connect(fartEnvelope).connect(reverb);
+    noise.connect(noiseFilter).connect(noiseAmp).connect(fartEnvelope);
+
+    // Start sounds
+    osc.start();
+    noise.start();
+
+    fartEnvelope.triggerAttackRelease(totalDuration);
+
+    // Stop sounds after duration
+    setTimeout(() => {
+        osc.stop();
+        noise.stop();
+    }, (totalDuration + 0.5) * 1000);
+
+    // Animate visualizer
+    animateVisualizer({ duration: totalDuration, context: Tone.getContext(), startTime: Tone.now() });
+}
         
         // Animate visualizer
         function animateVisualizer(fartSound) {
