@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tone@14.8.36/build/Tone.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FartLab: The Science of Gaseous Emissions</title>
@@ -1466,14 +1466,6 @@ async function generateFartSoundTone() {
 }
 
 
-// Connect routing
-osc.connect(oscAmp);
-oscAmp.connect(reverb);
-
-noise.connect(noiseFilter);
-noiseFilter.connect(noiseAmp);
-noiseAmp.connect(reverb);
-
 // Start sounds
 const now = Tone.now();
 
@@ -1484,14 +1476,7 @@ oscAmp.gain.linearRampToValueAtTime(0, now + totalDuration);
 noiseAmp.gain.setValueAtTime(0, now);
 noiseAmp.gain.linearRampToValueAtTime(0.5, now + 0.05);
 noiseAmp.gain.linearRampToValueAtTime(0, now + totalDuration);
-
-osc.start(now);
-noise.start(now);
-
-osc.stop(now + totalDuration + 0.1);
-noise.stop(now + totalDuration + 0.1);
-
-
+     
     // Animate visualizer
     animateVisualizer({ duration: totalDuration, context: Tone.getContext(), startTime: Tone.now() });
 }
