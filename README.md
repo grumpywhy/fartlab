@@ -1,4 +1,4 @@
-#🧪 FartLab: The Science of Flatulence
+🧪 FartLab: The Science of Flatulence
 FartLab is an interactive web application that explores the chemical composition of flatulence in a scientifically accurate yet humorous way. Created for educational and entertainment purposes, this project combines real scientific data with interactive elements to demystify the biochemistry behind a universal human experience.
 🔬 Features
 
