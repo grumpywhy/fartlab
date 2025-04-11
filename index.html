@@ -1684,8 +1684,10 @@ async function generateFartSoundTone() {
         });
         
         // Play fart button click handler
-        playFartBtn.addEventListener('click', function() {
-            if (fartSound) {
+playFartBtn.addEventListener('click', async function () {
+    await generateFartSoundTone();
+});
+
                 // If we already have a sound, generate a new one
                 fartSound = generateFartSound();
                 
