@@ -926,3 +926,1013 @@
         }
     </style>
 </head>
+<body>
+    <div class="retro-grid"></div>
+    
+    <header>
+        <div class="bubble" style="width: 60px; height: 60px; left: 10%; top: 20%;"></div>
+        <div class="bubble" style="width: 40px; height: 40px; left: 25%; top: 60%;"></div>
+        <div class="bubble" style="width: 80px; height: 80px; left: 70%; top: 30%;"></div>
+        <div class="bubble" style="width: 30px; height: 30px; left: 85%; top: 70%;"></div>
+        <div class="header-content">
+            <h1>FART<span class="glowing-text">LAB</span> <span style="font-size: 0.5em;">v4.20</span></h1>
+            <p>Mint the Gas, Embrace the Blast</p>
+            <div class="meme-tag" style="top: 20px; right: 50px;">SUCH SCIENCE</div>
+            <div class="laser-eyes" style="top: 120px; left: 30%;"></div>
+            <div class="laser-eyes" style="top: 120px; right: 30%;"></div>
+            
+            <!-- Research Log Entry -->
+            <div class="research-log">
+                <div class="log-header">CLASSIFIED RESEARCH LOG</div>
+                <div class="log-entry">SUBJECT #420B: Post-burrito emission characteristics demonstrate 47% increased methane production (p<0.0069).</div>
+                <div class="log-stamp">TOP SECRET</div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-flask"></i> FARTLAB
+            </div>
+            <div class="nav-links">
+                <a href="#mint"><i class="fas fa-wind"></i> MINT</a>
+                <a href="#leaderboard"><i class="fas fa-trophy"></i> LEADERBOARD</a>
+                <a href="#build"><i class="fas fa-vial"></i> BUILD-A-FART</a>
+                <a href="#about"><i class="fas fa-question-circle"></i> WTF?</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section class="menu-section">
+            <h2>🚀 MAIN MENU</h2>
+            <div class="grid-menu">
+                <div class="menu-card">
+                    <h3><i class="fas fa-wind"></i> Mint a Fart</h3>
+                    <p>Unleash a gas. Every mint is a new emission.</p>
+                    <span class="badge badge-hot">HOT</span>
+                </div>
+                
+                <div class="menu-card">
+                    <h3><i class="fas fa-trophy"></i> Gas Leaderboard</h3>
+                    <p>Who's ripped the loudest? Track top degens.</p>
+                </div>
+                
+                <div class="menu-card">
+                    <h3><i class="fas fa-chart-line"></i> Sniff Tracker</h3>
+                    <p>Real-time chart of the most volatile emissions.</p>
+                    <span class="badge badge-new">NEW</span>
+                </div>
+                
+                <div class="menu-card">
+                    <h3><i class="fas fa-box-open"></i> Fart Packs</h3>
+                    <p>Mystery mints. Could be silent, could be deadly.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SCIENTIFIC FART NAME GENERATOR -->
+        <section class="section">
+            <h2>🔬 FLATULENCE TAXONOMY GENERATOR</h2>
+            <div class="fart-name-generator">
+                <p>Our AI-powered classification system uses advanced algorithms to categorize gaseous emissions according to the International Flatology Association standards.</p>
+                
+                <div class="generated-fart-name" id="fart-name-display">
+                    Click to generate a scientific classification
+                </div>
+                
+                <button id="generate-name-btn"><i class="fas fa-atom"></i> Generate Classification</button>
+                
+                <div class="citation">
+                    [Gasworthy, R. et al. (2024). "Taxonomic Classification of Human Flatulence Variants Based on Chemical Composition". Journal of Flatological Sciences, 69(4), pp. 420-427]
+                </div>
+            </div>
+        </section>
+        
+        <!-- THE FARTODYNAMIC EQUATION -->
+        <section class="section">
+            <h2>📊 THEORETICAL FLATODYNAMICS</h2>
+            <div class="fartodynamic-equation">
+                <div class="equation-label">FARTODYNAMIC EQUATION</div>
+                <div class="equation">
+                    F<sub>total</sub> = ∑(C<sub>i</sub> × P<sub>i</sub> × t) + ∇²(V<sub>s</sub>) · ρ<sub>g</sub>
+                </div>
+                <p>Where F<sub>total</sub> represents total flatulence intensity, C<sub>i</sub> is the concentration of gas i, P<sub>i</sub> is the partial pressure, t is time, V<sub>s</sub> is sphincter velocity, and ρ<sub>g</sub> is gas density.</p>
+                <div class="citation">
+                    [Ne, M. et al. (2023). "Computational Approaches to Quantifying Human Flatulence". Proceedings of the International Symposium on Flatodynamics, 13(2), pp. 80-95]
+                </div>
+            </div>
+        </section>
+        
+        <!-- FART INTENSITY CHART -->
+        <section class="section">
+            <h2>📈 WEEKLY EMISSION INTENSITY TRACKER</h2>
+            <div class="chart-container">
+                <canvas id="fart-intensity-chart"></canvas>
+            </div>
+            <div class="citation">
+                [Unit 420-FRT. (2024). "Temporal Variations in Human Flatulence Intensity: A 7-Day Analysis". Automated Flatulence Tracking Quarterly, 18(3), pp. 210-228]
+            </div>
+        </section>
+        
+        <!-- SCIENTIFIC STAFF DIRECTORY -->
+        <section class="section">
+            <h2>👨‍🔬 RESEARCH PERSONNEL DIRECTORY</h2>
+            <p class="meme-scientific">Meet the distinguished flatulence researchers behind FartLab's groundbreaking work:</p>
+            
+            <div class="staff-card">
+                <div class="staff-name">Dr. Rudolf N. Gasworthy, Ph.D.</div>
+                <div class="staff-title">Senior Flatusologist, Director of Intestinal Dynamics</div>
+                <div class="staff-bio">Dr. Gasworthy pioneered the field of computational flatology after a breakthrough discovery during his postdoctoral research at MIT (Methane Institute of Technology). His revolutionary "Gas-Expansion Theorem" transformed our understanding of sphincter oscillation dynamics. When not in the lab, he enjoys brewing kombucha and long silent retreats.</div>
+                <div class="citation">"The modern flatulence researcher must approach the subject with both scientific rigor and a strong air filter." - Dr. Gasworthy, 2023</div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-name">Prof. Meth A. Ne, DSc.</div>
+                <div class="staff-title">Acoustic Waveform Specialist, Chair of Rectal Resonance Studies</div>
+                <div class="staff-bio">Professor Ne's groundbreaking work in anal acoustics earned her the prestigious "Golden Trumpet Award" from the International Society of Biological Sound Engineers. Her acoustic separation algorithm can identify the unique 'fart fingerprint' of any individual with 97.3% accuracy, a technology now being adopted by high-security facilities worldwide.</div>
+            </div>
+            
+            <div class="staff-card">
+                <div class="staff-name">AI Unit 420-FRT</div>
+                <div class="staff-title">Autonomous Emission Tracking System</div>
+                <div class="staff-bio">Developed in 2023, this advanced neural network processes over 10,000 flatulence samples daily. The system has developed unexpectedly sophisticated analytical capabilities, including the ability to predict bean consumption patterns with uncanny accuracy. Researchers remain puzzled by its occasional output message: "THE METHANE MUST FLOW."</div>
+            </div>
+        </section>
+        <section id="build" class="section">
+            <h2>🧪 BUILD-A-FART LAB</h2>
+            <p class="meme-scientific">Welcome to our state-of-the-art flatulence synthesis laboratory. Adjust molecular parameters and acoustic properties to create your perfect gaseous emission.</p>
+            
+            <div class="formula-box">
+                <p>In scientific terms, a fart (or <em>flatus</em>) is composed of several gases in varying proportions:</p>
+                <div class="formula">Fart = ∫(N₂ + H₂ + CO₂ + CH₄ + O₂ + H₂S) · dt</div>
+                <p>The exact composition varies by diet, gut microbiome, and individual physiology.</p>
+            </div>
+            
+            <div class="gas-container">
+                <div class="gas-card">
+                    <div class="gas-formula">N₂</div>
+                    <div class="gas-name">Nitrogen</div>
+                    <p>The main component of most farts, accounting for up to 90% of gas volume.</p>
+                    <span class="percentage">20-90%</span>
+                </div>
+                
+                <div class="gas-card">
+                    <div class="gas-formula">H₂</div>
+                    <div class="gas-name">Hydrogen</div>
+                    <p>Produced by bacterial fermentation of carbohydrates in the large intestine.</p>
+                    <span class="percentage">0-50%</span>
+                </div>
+                
+                <div class="gas-card">
+                    <div class="gas-formula">CO₂</div>
+                    <div class="gas-name">Carbon Dioxide</div>
+                    <p>Produced during digestion and from blood circulation into the intestines.</p>
+                    <span class="percentage">10-30%</span>
+                </div>
+                
+                <div class="gas-card">
+                    <div class="gas-formula">CH₄</div>
+                    <div class="gas-name">Methane</div>
+                    <p>Not everyone produces this! Only ~30% of people have methanogens in their gut.</p>
+                    <span class="percentage">0-10%</span>
+                </div>
+                
+                <div class="gas-card">
+                    <div class="gas-formula">O₂</div>
+                    <div class="gas-name">Oxygen</div>
+                    <p>Small amounts of swallowed oxygen that passes through the digestive system.</p>
+                    <span class="percentage">0-10%</span>
+                </div>
+                
+                <div class="gas-card">
+                    <div class="gas-formula">H₂S</div>
+                    <div class="gas-name">Hydrogen Sulfide</div>
+                    <p>The infamous "rotten egg" smell. Present in tiny amounts but packs a powerful punch!</p>
+                    <span class="percentage">Trace</span>
+                </div>
+            </div>
+            
+            <div id="interactive-fart">
+                <h2>🔬 F.A.R.T. SYNTHESIZER v2.0</h2>
+                <p>F.A.R.T. Synthesizer v2.0: Create, Analyze, and Experience Your Custom Flatulence</p>
+                
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>Nitrogen (N₂)</span>
+                        <span id="n2-value">60%</span>
+                    </div>
+                    <input type="range" id="n2-slider" min="20" max="90" value="60">
+                    
+                    <div class="slider-label">
+                        <span>Hydrogen (H₂)</span>
+                        <span id="h2-value">20%</span>
+                    </div>
+                    <input type="range" id="h2-slider" min="0" max="50" value="20">
+                    
+                    <div class="slider-label">
+                        <span>Carbon Dioxide (CO₂)</span>
+                        <span id="co2-value">15%</span>
+                    </div>
+                    <input type="range" id="co2-slider" min="10" max="30" value="15">
+                    
+                    <div class="slider-label">
+                        <span>Methane (CH₄)</span>
+                        <span id="ch4-value">3%</span>
+                    </div>
+                    <input type="range" id="ch4-slider" min="0" max="10" value="3">
+                    
+                    <div class="slider-label">
+                        <span>Oxygen (O₂)</span>
+                        <span id="o2-value">2%</span>
+                    </div>
+                    <input type="range" id="o2-slider" min="0" max="10" value="2">
+                    
+                    <div class="slider-label">
+                        <span>Hydrogen Sulfide (H₂S) - The Stinky Part</span>
+                        <span id="h2s-value">0.1%</span>
+                    </div>
+                    <input type="range" id="h2s-slider" min="0" max="1" step="0.1" value="0.1">
+                </div>
+                
+                <div id="composition-display">
+                    <p>Total Composition: <span id="total-percentage">100.1%</span></p>
+                    <div id="composition-warning" style="color: red; display: none;">Warning: Total should add up to approximately 100%</div>
+                </div>
+                
+                <!-- Sound Settings -->
+                <div class="sound-controls">
+                    <h3><i class="fas fa-volume-up"></i> Acoustic Parameters</h3>
+                    <p>Configure the sonic properties of your gaseous emission</p>
+                    
+                    <div class="sound-settings">
+                        <div class="sound-setting">
+                            <label for="pitch">Pitch:</label>
+                            <input type="range" id="pitch" min="0" max="100" value="50">
+                        </div>
+                        
+                        <div class="sound-setting">
+                            <label for="duration">Duration:</label>
+                            <input type="range" id="duration" min="0" max="100" value="30">
+                        </div>
+                        
+                        <div class="sound-setting">
+                            <label for="wetness">Wetness:</label>
+                            <input type="range" id="wetness" min="0" max="100" value="20">
+                        </div>
+                        
+                        <div class="sound-setting">
+                            <label for="reverb">Echo Chamber:</label>
+                            <input type="range" id="reverb" min="0" max="100" value="10">
+                        </div>
+                    </div>
+                    
+                    <div id="visualizer"></div>
+                </div>
+                
+                <button id="analyze-btn">Analyze & Synthesize Fart</button>
+                <button id="play-fart-btn" class="sound-btn"><i class="fas fa-play"></i> Play Flatulence</button>
+                <button id="mint-fart-btn" class="nft-button"><i class="fas fa-cube"></i> Mint This Fart as NFT</button>
+                
+                <div class="fart-result" id="fart-analysis">
+                    <p>Adjust the sliders and click analyze to discover the properties of your custom fart!</p>
+                </div>
+                
+                <div class="fart-score">
+                    <div class="fart-score-item">
+                        <div class="fart-score-label">VOLUME</div>
+                        <div class="fart-score-value" id="volume-score">0</div>
+                    </div>
+                    <div class="fart-score-item">
+                        <div class="fart-score-label">STANK</div>
+                        <div class="fart-score-value" id="stank-score">0</div>
+                    </div>
+                    <div class="fart-score-item">
+                        <div class="fart-score-label">VELOCITY</div>
+                        <div class="fart-score-value" id="velocity-score">0</div>
+                    </div>
+                    <div class="fart-score-item">
+                        <div class="fart-score-label">F.A.R.T. SCORE</div>
+                        <div class="fart-score-value" id="fart-score">0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="fart-science" class="section">
+            <h2>📊 ANAL-YTICS: The Science Behind the Smell</h2>
+            <div class="highlight">
+                <p>According to peer-reviewed flatulence research, the typical human produces between 0.5 and 1.5 liters of intestinal gas per day, released through the anal sphincter in 10-20 discrete emission events. Volume, frequency, and olfactory characteristics are determined by the following variables:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Impact on Flatulence Metrics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dietary Substrate</td>
+                            <td>Fermentable oligosaccharides, disaccharides, monosaccharides, and polyols (FODMAPs) significantly increase microbial gas production</td>
+                        </tr>
+                        <tr>
+                            <td>Microbiome Composition</td>
+                            <td>Methanobrevibacter smithii presence determines methane production; Desulfovibrio species increase H₂S synthesis</td>
+                        </tr>
+                        <tr>
+                            <td>Pathophysiological States</td>
+                            <td>IBS, carbohydrate malabsorption syndromes, and dysbiosis alter fermentation patterns</td>
+                        </tr>
+                        <tr>
+                            <td>Aerophagia</td>
+                            <td>Rapid ingestion, carbonated beverage consumption, and anxiety-related behaviors increase N₂ and O₂ content</td>
+                        </tr>
+                        <tr>
+                            <td>Transit Time</td>
+                            <td>Inversely correlated with fermentation duration; faster transit = less complete fermentation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="meme-scientific">
+                <p>In layman's terms: what goes in determines what comes out, and how badly it wrecks the room.</p>
+            </div>
+        </section>
+        
+        <section id="methane-metrics" class="section">
+            <h2>📈 METHANE METRICS: Gas Analysis</h2>
+            
+            <div class="fun-fact">
+                <p>Flatus exit velocity has been experimentally measured at 3.05 m/s (10 ft/s), approximately 6.8 mph. This creates sufficient acoustic turbulence for the characteristic sound.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p>The combustibility of flatus has been verified in multiple studies. The hydrogen component can ignite at concentrations as low as 4% in air, while methane requires a 5.4% threshold concentration. WARNING: Self-experimentation is strongly discouraged.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p>Methanogenesis capability follows a bimodal distribution in human populations. Only 33-50% of individuals harbor sufficient methanogenic archaea to produce detectable CH₄. This trait shows strong familial clustering.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p>Flatulence frequency follows a normal distribution with mean μ = 13.6 events/day and standard deviation σ = 5.2. Total daily gas volume averages 705 mL ± 170 mL, equivalent to approximately one wine bottle.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p>The human olfactory system can detect hydrogen sulfide at 0.5 ppb, while the lethal concentration is approximately 1000 ppm, representing a 2,000,000-fold safety margin. Evolution has prioritized extremely sensitive detection of potential biological hazards.</p>
+            </div>
+        </section>
+        
+        <section id="faq" class="section">
+            <h2>🧻 WHAT THE FART? (FAQ)</h2>
+            
+            <div class="fun-fact">
+                <p><strong>Q: What is FartLab?</strong><br>
+                A: FartLab is a scientifically accurate gas analysis platform that enables users to study, synthesize, and mint custom flatulence compositions using our proprietary Flatus Algorithmic Rating Technology (F.A.R.T.).</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><strong>Q: Is this real science?</strong><br>
+                A: Absolutely. The chemical composition data is based on peer-reviewed flatology research. The acoustic simulations utilize advanced computational fluid dynamics to model sphincter oscillations accurately.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><strong>Q: What does the F.A.R.T. Score measure?</strong><br>
+                A: The Flatus Algorithmic Rating Tracker provides a comprehensive assessment based on Volume (acoustic intensity), Stank (olfactory impact factor), and Velocity (exit kinetics). This proprietary metric quantifies the overall quality and memorability of a gaseous emission.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><strong>Q: How do I mint a fart?</strong><br>
+                A: After customizing your ideal gas composition and acoustic properties, click "Mint This Fart as NFT" to tokenize your creation on the blockchain. Each emission is unique and cannot be duplicated.</p>
+            </div>
+            
+            <div class="fun-fact">
+                <p><strong>Q: Will I die?</strong><br>
+                A: Maybe. Studies show that exposure to high concentrations of hydrogen sulfide can be lethal. However, statistical analysis indicates that the probability of self-asphyxiation via flatulence is approximately 0.0000042%—roughly equivalent to the chance of being simultaneously struck by lightning and a meteorite while winning the lottery.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Flatulence Formula Laboratories | Mint the Gas, Embrace the Blast</p>
+        <p><small>Disclaimer: This website was created for educational and entertainment purposes. Consult a gastroenterologist for concerning emissions. Not financial advice.</small></p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // Interactive sliders for the custom fart composition
+        const sliders = {
+            'n2': document.getElementById('n2-slider'),
+            'h2': document.getElementById('h2-slider'),
+            'co2': document.getElementById('co2-slider'),
+            'ch4': document.getElementById('ch4-slider'),
+            'o2': document.getElementById('o2-slider'),
+            'h2s': document.getElementById('h2s-slider')
+        };
+        
+        const soundSliders = {
+            'pitch': document.getElementById('pitch'),
+            'duration': document.getElementById('duration'),
+            'wetness': document.getElementById('wetness'),
+            'reverb': document.getElementById('reverb')
+        };
+        
+        const valueDisplays = {
+            'n2': document.getElementById('n2-value'),
+            'h2': document.getElementById('h2-value'),
+            'co2': document.getElementById('co2-value'),
+            'ch4': document.getElementById('ch4-value'),
+            'o2': document.getElementById('o2-value'),
+            'h2s': document.getElementById('h2s-value')
+        };
+        
+        const totalPercentage = document.getElementById('total-percentage');
+        const compositionWarning = document.getElementById('composition-warning');
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const playFartBtn = document.getElementById('play-fart-btn');
+        const mintFartBtn = document.getElementById('mint-fart-btn');
+        const fartAnalysis = document.getElementById('fart-analysis');
+        const volumeScore = document.getElementById('volume-score');
+        const stankScore = document.getElementById('stank-score');
+        const velocityScore = document.getElementById('velocity-score');
+        const fartScore = document.getElementById('fart-score');
+        const generateNameBtn = document.getElementById('generate-name-btn');
+        const fartNameDisplay = document.getElementById('fart-name-display');
+        
+        // Create audio context for fart sounds
+        let audioContext;
+        let fartSound;
+        
+        // Initialize visualizer
+        const visualizer = document.getElementById('visualizer');
+        for (let i = 0; i < 32; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'visualizer-bar';
+            bar.style.left = (i * (100 / 32)) + '%';
+            bar.style.width = (100 / 40) + '%';
+            bar.style.height = '0px';
+            visualizer.appendChild(bar);
+        }
+        
+        // Update slider value displays and calculate total
+        function updateValues() {
+            let total = 0;
+            
+            for (const gas in sliders) {
+                const value = parseFloat(sliders[gas].value);
+                valueDisplays[gas].textContent = value + '%';
+                total += value;
+            }
+            
+            totalPercentage.textContent = total.toFixed(1) + '%';
+            
+            // Show warning if total is significantly off from 100%
+            if (Math.abs(total - 100) > 5) {
+                compositionWarning.style.display = 'block';
+            } else {
+                compositionWarning.style.display = 'none';
+            }
+        }
+        
+        // Add event listeners to all sliders
+        for (const gas in sliders) {
+            sliders[gas].addEventListener('input', updateValues);
+        }
+        
+        // Initialize values
+        updateValues();
+        
+        // Generate fart sound based on parameters
+        function generateFartSound() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            
+            const n2 = parseFloat(sliders['n2'].value);
+            const h2 = parseFloat(sliders['h2'].value);
+            const ch4 = parseFloat(sliders['ch4'].value);
+            const h2s = parseFloat(sliders['h2s'].value);
+            const pitch = parseFloat(soundSliders['pitch'].value);
+            const duration = parseFloat(soundSliders['duration'].value);
+            const wetness = parseFloat(soundSliders['wetness'].value);
+            const reverbAmount = parseFloat(soundSliders['reverb'].value);
+            
+            // Calculate base duration (0.2 to 2 seconds)
+            const baseDuration = 0.2 + (duration / 100) * 1.8;
+            
+            // Create oscillator for the base sound
+            const oscillator = audioContext.createOscillator();
+            oscillator.type = 'sine';
+            
+            // Create noise for the turbulence
+            const bufferSize = 2 * audioContext.sampleRate;
+            const noiseBuffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+            const output = noiseBuffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                output[i] = Math.random() * 2 - 1;
+            }
+            
+            const noise = audioContext.createBufferSource();
+            noise.buffer = noiseBuffer;
+            
+            // Create gain nodes
+            const masterGain = audioContext.createGain();
+            const noiseGain = audioContext.createGain();
+            const oscillatorGain = audioContext.createGain();
+            
+            // Create filter for noise
+            const noiseFilter = audioContext.createBiquadFilter();
+            noiseFilter.type = 'lowpass';
+            noiseFilter.frequency.value = 400 + (1 - h2 / 50) * 600;
+            noiseFilter.Q.value = 15;
+            
+            // Create filter for oscillator
+            const oscillatorFilter = audioContext.createBiquadFilter();
+            oscillatorFilter.type = 'lowpass';
+            oscillatorFilter.frequency.value = 100 + pitch;
+            
+            // Create reverb for echo chamber effect
+            const convolver = audioContext.createConvolver();
+            const reverbBuffer = audioContext.createBuffer(2, audioContext.sampleRate * 3, audioContext.sampleRate);
+            const leftChannel = reverbBuffer.getChannelData(0);
+            const rightChannel = reverbBuffer.getChannelData(1);
+            
+            for (let i = 0; i < reverbBuffer.length; i++) {
+                leftChannel[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioContext.sampleRate * reverbAmount / 25));
+                rightChannel[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioContext.sampleRate * reverbAmount / 25));
+            }
+            
+            convolver.buffer = reverbBuffer;
+            
+            // Connect everything
+            noise.connect(noiseFilter);
+            noiseFilter.connect(noiseGain);
+            
+            oscillator.connect(oscillatorFilter);
+            oscillatorFilter.connect(oscillatorGain);
+            
+            noiseGain.connect(masterGain);
+            oscillatorGain.connect(masterGain);
+            
+            // Add reverb if specified
+            if (reverbAmount > 10) {
+                masterGain.connect(convolver);
+                convolver.connect(audioContext.destination);
+            }
+            
+            masterGain.connect(audioContext.destination);
+            
+            // Set initial values
+            masterGain.gain.value = 0;
+            noiseGain.gain.value = 0.5;
+            oscillatorGain.gain.value = 0.5;
+            
+            // Determine oscillator frequency based on pitch and gas composition
+            const baseFreq = 50 + (pitch / 2);
+            oscillator.frequency.value = baseFreq;
+            
+            // Schedule parameter changes
+            const now = audioContext.currentTime;
+            
+            // Main envelope
+            masterGain.gain.setValueAtTime(0, now);
+            masterGain.gain.linearRampToValueAtTime(0.8, now + 0.01);
+            
+            // Wet sounds have more variability
+            if (wetness > 50) {
+                // Add bubbling effects for wet farts
+                for (let i = 0; i < 8; i++) {
+                    const bubbleTime = now + (baseDuration * (i / 8));
+                    oscillator.frequency.setValueAtTime(baseFreq + Math.random() * 20, bubbleTime);
+                    masterGain.gain.setValueAtTime(0.7 + Math.random() * 0.3, bubbleTime);
+                }
+            } else {
+                // Drier, more consistent tone
+                oscillator.frequency.linearRampToValueAtTime(baseFreq * 0.7, now + baseDuration * 0.8);
+            }
+            
+            // End envelope
+            masterGain.gain.setValueAtTime(masterGain.gain.value, now + baseDuration - 0.05);
+            masterGain.gain.linearRampToValueAtTime(0, now + baseDuration);
+            
+            // Start the sound
+            oscillator.start(now);
+            noise.start(now);
+            
+            // Stop the sound
+            oscillator.stop(now + baseDuration + 0.1);
+            noise.stop(now + baseDuration + 0.1);
+            
+            return {
+                context: audioContext,
+                duration: baseDuration,
+                startTime: now
+            };
+        }
+        
+        // Animate visualizer
+        function animateVisualizer(fartSound) {
+            const bars = document.querySelectorAll('.visualizer-bar');
+            const startTime = fartSound.startTime;
+            const duration = fartSound.duration;
+            const context = fartSound.context;
+            
+            // Create random pattern for bars (simple visualization)
+            function updateRandomBars() {
+                const currentTime = context.currentTime;
+                if (currentTime < startTime + duration + 0.1) {
+                    for (let i = 0; i < bars.length; i++) {
+                        // Value depends on time progress through the sound
+                        const progress = Math.min(1, (currentTime - startTime) / duration);
+                        const heightFactor = Math.sin(progress * Math.PI) * (1 - Math.abs(0.5 - i/bars.length));
+                        
+                        // Random variation based on parameters
+                        const randomHeight = Math.random() * 70 * heightFactor + 10 * heightFactor;
+                        bars[i].style.height = randomHeight + 'px';
+                    }
+                    
+                    requestAnimationFrame(updateRandomBars);
+                } else {
+                    // Reset bars
+                    for (let i = 0; i < bars.length; i++) {
+                        bars[i].style.height = '0px';
+                    }
+                }
+            }
+            
+            updateRandomBars();
+        }
+        
+        // Generate random fart name
+        function generateFartName() {
+            const prefixes = [
+                "Type I", "Type II", "Type III", "Type IV", "Type V",
+                "Alpha", "Beta", "Gamma", "Delta", "Omega",
+                "Proto", "Neo", "Ultra", "Hyper", "Meta"
+            ];
+            
+            const compositions = [
+                "Hydrogen-Rich", "Methane-Dominant", "Sulfide-Infused", "Nitrogen-Heavy", "Carbon-Dense",
+                "Oxygen-Depleted", "Trace-Element", "Mixed-Gas", "Compound", "Volatile"
+            ];
+            
+            const characteristics = [
+                "Sonic", "Silent", "Resonant", "Acoustic", "Olfactory",
+                "Extended", "Burst", "Sustained", "Pulsating", "Pressurized"
+            ];
+            
+            const classifications = [
+                "Flatus", "Emission", "Expulsion", "Release", "Discharge",
+                "Exhalation", "Eruption", "Surge", "Wave", "Plume"
+            ];
+            
+            const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+            const randomComp = compositions[Math.floor(Math.random() * compositions.length)];
+            const randomChar = characteristics[Math.floor(Math.random() * characteristics.length)];
+            const randomClass = classifications[Math.floor(Math.random() * classifications.length)];
+            
+            return `${randomPrefix} ${randomComp} ${randomChar} ${randomClass}`;
+        }
+        
+        // Analyze button click handler
+        analyzeBtn.addEventListener('click', function() {
+            const n2 = parseFloat(sliders['n2'].value);
+            const h2 = parseFloat(sliders['h2'].value);
+            const co2 = parseFloat(sliders['co2'].value);
+            const ch4 = parseFloat(sliders['ch4'].value);
+            const o2 = parseFloat(sliders['o2'].value);
+            const h2s = parseFloat(sliders['h2s'].value);
+            
+            // Get sound parameters
+            const pitch = parseFloat(soundSliders['pitch'].value);
+            const duration = parseFloat(soundSliders['duration'].value);
+            const wetness = parseFloat(soundSliders['wetness'].value);
+            const reverb = parseFloat(soundSliders['reverb'].value);
+            
+            let analysis = '';
+            
+            // Calculate scores
+            const stankValue = Math.min(10, Math.round(h2s * 10) + Math.floor(ch4 / 3));
+            const volumeValue = Math.round((100 - pitch) / 10) + Math.floor(duration / 20);
+            const velocityValue = Math.round((h2 / 10) + (n2 / 20));
+            const totalFartScore = Math.round((stankValue + volumeValue + velocityValue) / 3 * 10);
+            
+            // Update score displays
+            stankScore.textContent = stankValue;
+            volumeScore.textContent = volumeValue;
+            velocityScore.textContent = velocityValue;
+            fartScore.textContent = totalFartScore;
+            
+            // Determine smell characteristics based on gas composition
+            let smellDescription = '';
+            let smellIntensity = '';
+            let soundDescription = '';
+            let soundIntensity = '';
+            
+            // Smell intensity based on sulfur content
+            if (h2s < 0.2) {
+                smellIntensity = 'barely detectable';
+            } else if (h2s < 0.4) {
+                smellIntensity = 'mild';
+            } else if (h2s < 0.6) {
+                smellIntensity = 'moderate';
+            } else if (h2s < 0.8) {
+                smellIntensity = 'potent';
+            } else {
+                smellIntensity = 'extremely intense';
+            }
+            
+            // Smell description based on gas composition
+            if (h2s > 0.5 && ch4 > 5) {
+                smellDescription = 'rotten egg with swampy undertones';
+            } else if (h2s > 0.5) {
+                smellDescription = 'pure sulfuric rotten egg';
+            } else if (ch4 > 5) {
+                smellDescription = 'swampy organic decay';
+            } else if (co2 > 25) {
+                smellDescription = 'musty and stale';
+            } else if (h2 > 30) {
+                smellDescription = 'slightly acrid yet mostly odorless';
+            } else {
+                smellDescription = 'generic biological odor';
+            }
+            
+            // Sound intensity based on parameters
+            if (duration < 30) {
+                if (pitch > 70) {
+                    soundIntensity = 'quick, high-pitched';
+                } else {
+                    soundIntensity = 'brief, subtle';
+                }
+            } else if (duration < 60) {
+                if (pitch > 70) {
+                    soundIntensity = 'moderate-length, squeaky';
+                } else if (pitch < 30) {
+                    soundIntensity = 'medium, low-toned';
+                } else {
+                    soundIntensity = 'average duration and pitch';
+                }
+            } else {
+                if (pitch > 70) {
+                    soundIntensity = 'extended, high-frequency';
+                } else if (pitch < 30) {
+                    soundIntensity = 'lengthy, bass-heavy';
+                } else {
+                    soundIntensity = 'prolonged, moderate pitch';
+                }
+            }
+            
+            // Sound description based on parameters
+            if (wetness > 70) {
+                soundDescription = 'wet and bubbling';
+            } else if (wetness > 40) {
+                soundDescription = 'partially moist';
+            } else {
+                soundDescription = 'dry and airy';
+            }
+            
+            // Add reverb description
+            let reverbDescription = '';
+            if (reverb > 70) {
+                reverbDescription = 'with significant echo (likely in bathroom setting)';
+            } else if (reverb > 40) {
+                reverbDescription = 'with moderate reverberation';
+            } else if (reverb > 10) {
+                reverbDescription = 'with slight resonance';
+            }
+            
+            // Determine flammability based on methane and hydrogen
+            let flammability = '';
+            const flammableGases = h2 + ch4;
+            if (flammableGases < 10) {
+                flammability = 'Non-flammable';
+            } else if (flammableGases < 25) {
+                flammability = 'Mildly flammable';
+            } else if (flammableGases < 40) {
+                flammability = 'Definitely flammable';
+            } else {
+                flammability = 'Highly flammable - caution advised!';
+            }
+            
+            // Generate analysis with scientific terminology
+            analysis = `
+                <h3>F.A.R.T. Analysis Report</h3>
+                
+                <h4>Olfactory Properties:</h4>
+                <p>This gaseous emission would produce a <strong>${smellIntensity}</strong> odor characterized as <strong>${smellDescription}</strong>. The hydrogen sulfide concentration of ${h2s}% creates the primary olfactory signature, while the ${ch4}% methane content contributes secondary notes.</p>
+                
+                <h4>Acoustic Characteristics:</h4>
+                <p>Expected sound profile: <strong>${soundIntensity}, ${soundDescription}</strong> ${reverbDescription}. The acoustic waveform would exhibit turbulent flow patterns typical of a sphincter oscillation frequency corresponding to the parameters selected.</p>
+                
+                <h4>Physical Properties:</h4>
+                <p><strong>Gas composition:</strong> ${n2}% N₂, ${h2}% H₂, ${co2}% CO₂, ${ch4}% CH₄, ${o2}% O₂, ${h2s}% H₂S</p>
+                <p><strong>Flammability assessment:</strong> ${flammability}</p>
+                <p><strong>Diffusion rate:</strong> ${Math.round(80 + (h2 * 0.5) - (co2 * 0.3))}% of standard atmospheric dispersion</p>
+                
+                <h4>Social Impact Assessment:</h4>
+                <p>This emission would clear approximately ${Math.min(100, Math.round(10 + (h2s * 100) + (totalFartScore * 0.8)))}% of an average-sized elevator within ${Math.max(2, Math.round(10 - h2s * 10))} seconds.</p>
+                <p>Recommended safe distance for bystanders: ${Math.round(1 + (stankValue * 0.3))} meters.</p>
+                
+                <h4>F.A.R.T. Score Breakdown:</h4>
+                <ul>
+                    <li>Volume Rating: ${volumeValue}/10</li>
+                    <li>Stank Factor: ${stankValue}/10</li>
+                    <li>Velocity Coefficient: ${velocityValue}/10</li>
+                    <li>Overall F.A.R.T. Score: ${totalFartScore}/100</li>
+                </ul>
+                
+                <p>Press the "Play Flatulence" button below to experience an audio simulation of this custom emission.</p>
+            `;
+            
+            fartAnalysis.innerHTML = analysis;
+            
+            // Generate and store the fart sound for later playback
+            fartSound = generateFartSound();
+        });
+        
+        // Play fart button click handler
+        playFartBtn.addEventListener('click', function() {
+            if (fartSound) {
+                // If we already have a sound, generate a new one
+                fartSound = generateFartSound();
+                
+                // Animate the visualizer
+                animateVisualizer(fartSound);
+            } else {
+                // First generate the sound
+                fartSound = generateFartSound();
+                
+                // Animate the visualizer
+                animateVisualizer(fartSound);
+                
+                // Also trigger the analysis
+                analyzeBtn.click();
+            }
+        });
+        
+        // Mint button handler
+        mintFartBtn.addEventListener('click', function() {
+            alert("Congratulations! Your custom fart has been minted as NFT #" + Math.floor(Math.random() * 10000) + " on the Fartchain. This digital asset can now be traded, collected, or used to clear virtual rooms.");
+        });
+        
+        // Generate fart name button handler
+        generateNameBtn.addEventListener('click', function() {
+            const newName = generateFartName();
+            fartNameDisplay.textContent = newName;
+            fartNameDisplay.style.color = `hsl(${Math.random() * 60 + 180}, 70%, 60%)`;
+        });
+        
+        // Create the intensity chart
+        function createIntensityChart() {
+            const ctx = document.getElementById('fart-intensity-chart').getContext('2d');
+            
+            // Generate random data for the week
+            const data = [
+                Math.random() * 30 + 40,  // Monday
+                Math.random() * 30 + 50,  // Tuesday
+                Math.random() * 30 + 60,  // Wednesday
+                Math.random() * 30 + 70,  // Thursday (Bean Day)
+                Math.random() * 30 + 50,  // Friday
+                Math.random() * 30 + 40,  // Saturday
+                Math.random() * 30 + 30   // Sunday
+            ];
+            
+            // Create gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, 'rgba(6, 182, 212, 0.8)');
+            gradient.addColorStop(1, 'rgba(6, 182, 212, 0.1)');
+            
+            // Create chart
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [
+                        'Monday', 
+                        'Tuesday', 
+                        'Wednesday', 
+                        'Thursday (Bean Day)', 
+                        'Friday', 
+                        'Saturday', 
+                        'Sunday'
+                    ],
+                    datasets: [{
+                        label: 'Flatulence Intensity',
+                        data: data,
+                        borderColor: 'rgba(6, 182, 212, 1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        backgroundColor: gradient,
+                        pointBackgroundColor: 'rgba(249, 115, 22, 1)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(241, 245, 249, 0.8)'
+                            },
+                            title: {
+                                display: true,
+                                text: 'PPM (Parts Per Million)',
+                                color: 'rgba(241, 245, 249, 0.8)',
+                                font: {
+                                    family: 'Courier New',
+                                    size: 12
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(241, 245, 249, 0.8)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(241, 245, 249, 0.8)',
+                                font: {
+                                    family: 'Courier New'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                            titleFont: {
+                                family: 'Courier New'
+                            },
+                            bodyFont: {
+                                family: 'Courier New'
+                            },
+                            callbacks: {
+                                label: function(context) {
+                                    return `Intensity: ${context.raw.toFixed(1)} PPM`;
+                                },
+                                afterLabel: function(context) {
+                                    const value = context.raw;
+                                    if (value > 70) {
+                                        return 'WARNING: High intensity detected!';
+                                    } else if (value > 50) {
+                                        return 'NOTICE: Moderate intensity';
+                                    } else {
+                                        return 'STATUS: Normal range';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            return chart;
+        }
+        
+        // Add some "bubbles" to the header for visual effect
+        const header = document.querySelector('header');
+        for (let i = 0; i < 8; i++) {
+            const size = Math.floor(Math.random() * 50) + 20;
+            const left = Math.floor(Math.random() * 90) + 5;
+            const top = Math.floor(Math.random() * 70) + 10;
+            const delay = Math.floor(Math.random() * 5);
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.left = left + '%';
+            bubble.style.top = top + '%';
+            bubble.style.animationDelay = delay + 's';
+            
+            header.appendChild(bubble);
+        }
+        
+        // Initialize everything when DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create the intensity chart
+            const chart = createIntensityChart();
+            
+            // Update values
+            updateValues();
+            
+            // Generate a random fart name to start
+            generateNameBtn.click();
+        });
+    </script>
+</body>
+</html>
