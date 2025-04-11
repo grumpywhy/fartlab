@@ -1439,21 +1439,31 @@ async function generateFartSoundTone() {
         release: 0.1
     });
 
-    // Connect routing
-    osc.connect(oscAmp).connect(fartEnvelope).connect(reverb);
-    noise.connect(noiseFilter).connect(noiseAmp).connect(fartEnvelope);
+// Connect routing
+osc.connect(oscAmp);
+oscAmp.connect(reverb);
 
-    // Start sounds
-    osc.start();
-    noise.start();
+noise.connect(noiseFilter);
+noiseFilter.connect(noiseAmp);
+noiseAmp.connect(reverb);
 
-    fartEnvelope.triggerAttackRelease(totalDuration);
+// Start sounds
+const now = Tone.now();
 
-    // Stop sounds after duration
-    setTimeout(() => {
-        osc.stop();
-        noise.stop();
-    }, (totalDuration + 0.5) * 1000);
+oscAmp.gain.setValueAtTime(0, now);
+oscAmp.gain.linearRampToValueAtTime(0.4, now + 0.05);
+oscAmp.gain.linearRampToValueAtTime(0, now + totalDuration);
+
+noiseAmp.gain.setValueAtTime(0, now);
+noiseAmp.gain.linearRampToValueAtTime(0.5, now + 0.05);
+noiseAmp.gain.linearRampToValueAtTime(0, now + totalDuration);
+
+osc.start(now);
+noise.start(now);
+
+osc.stop(now + totalDuration + 0.1);
+noise.stop(now + totalDuration + 0.1);
+
 
     // Animate visualizer
     animateVisualizer({ duration: totalDuration, context: Tone.getContext(), startTime: Tone.now() });
