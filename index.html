@@ -1361,10 +1361,6 @@
         const generateNameBtn = document.getElementById('generate-name-btn');
         const fartNameDisplay = document.getElementById('fart-name-display');
         
-        // Create audio context for fart sounds
-        let audioContext;
-        let fartSound;
-        
         // Initialize visualizer
         const visualizer = document.getElementById('visualizer');
         for (let i = 0; i < 32; i++) {
@@ -1678,28 +1674,15 @@ async function generateFartSoundTone() {
             `;
             
             fartAnalysis.innerHTML = analysis;
-            
-            // Generate and store the fart sound for later playback
-            fartSound = generateFartSound();
         });
         
         // Play fart button click handler
 playFartBtn.addEventListener('click', async function () {
     await generateFartSoundTone();
 });
-
-                // If we already have a sound, generate a new one
-                fartSound = generateFartSound();
                 
-                // Animate the visualizer
-                animateVisualizer(fartSound);
             } else {
-                // First generate the sound
-                fartSound = generateFartSound();
-                
-                // Animate the visualizer
-                animateVisualizer(fartSound);
-                
+
                 // Also trigger the analysis
                 analyzeBtn.click();
             }
